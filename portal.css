@@ -97,3 +97,73 @@ body.lesson-body{height:100vh;overflow:hidden;background:#080b14}.lesson-shell{h
 .google-btn svg { width: 18px; height: 18px; flex: none; }
 .google-btn:hover { background: #f4f6ff; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12); }
 .google-btn:disabled { opacity: 0.6; cursor: wait; }
+
+/* ── 가독성 확대 오버라이드 (2026-07-17) — 강의실·자료실·관리자 전반 글씨 키움 ── */
+.admin-nav button{font-size:13px}
+.admin-nav-label{font-size:10px}
+.admin-user b{font-size:13px}
+.admin-user small{font-size:11px}
+.admin-button{font-size:13px}
+.view-head p{font-size:13px}
+.admin-stat small{font-size:12px}
+.admin-stat em{font-size:11px}
+.panel-head a,.panel-head button{font-size:12px}
+.activity-item b{font-size:12px}
+.activity-item small,.activity-item time{font-size:11px}
+.data-table th{font-size:12px}
+.data-table td{font-size:13px}
+.member-cell b{font-size:13px}
+.member-cell small{font-size:11px}
+.status-badge{font-size:10px}
+.admin-search{font-size:13px}
+.filter-select{font-size:12px}
+.agent-card-top small{font-size:11px}
+.agent-metrics span{font-size:10px}
+.course-summary-grid span{font-size:12px}
+.course-summary-grid small{font-size:10px}
+.course-tabs button{font-size:12px}
+.course-admin-info h2{font-size:15px}
+.course-admin-info p{font-size:12px}
+.course-state-row{font-size:10px}
+.course-data-row span{font-size:11px}
+.resource-file-cell b{font-size:12px}
+.resource-file-cell small{font-size:10px}
+.resource-form label{font-size:12px}
+.resource-mini-stats span{font-size:10px}
+.curriculum-chapter header b{font-size:13px}
+.curriculum-chapter header small{font-size:10px}
+.curriculum-chapter header em{font-size:10px}
+.curriculum-lesson b{font-size:13px}
+.curriculum-lesson small{font-size:11px}
+.lesson-resource{font-size:10px}
+.add-lesson-button{font-size:12px}
+.lesson-source-tabs button{font-size:12px}
+.classroom-nav a{font-size:13px}
+.classroom-hero p{font-size:14px}
+.classroom-hero small{font-size:11px}
+.continue-card p{font-size:12px}
+.classroom-section-head p{font-size:12px}
+.student-course-body h3{font-size:14px}
+.student-course-body p{font-size:11px}
+.student-course-meta{font-size:11px}
+.notice-row b{font-size:12px}
+.notice-row small{font-size:11px}
+.quick-resource b{font-size:12px}
+.quick-resource small{font-size:11px}
+.classroom-resource b{font-size:13px}
+.classroom-resource small{font-size:11px}
+.lesson-back{font-size:12px}
+.lesson-header-title b{font-size:13px}
+.lesson-header-title small{font-size:10px}
+.lesson-progress-card small,.lesson-progress-card span{font-size:11px}
+.lesson-chapter header small{font-size:10px}
+.lesson-chapter header b{font-size:13px}
+.lesson-link b{font-size:13px}
+.lesson-link small{font-size:10px}
+.lesson-link em{font-size:10px}
+.lesson-info p{font-size:13px}
+.lesson-box p,.lesson-box li{font-size:12px}
+.lesson-download b{font-size:12px}
+.lesson-download small{font-size:10px}
+.lesson-notes{font-size:13px}
+.lesson-placeholder small{font-size:11px}

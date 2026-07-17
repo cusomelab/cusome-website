@@ -153,24 +153,30 @@
         statusEl.textContent = message;
     };
 
+    // 관리자 이메일 — 구글 로그인 시 이 목록이면 관리자 화면으로 (실제 등록 권한은 서버(Supabase RLS)가 별도로 검사)
+    const ADMIN_EMAILS = ['upang1109@gmail.com', 'phoneeasy@naver.com'];
+
     const finishGoogleLogin = (user) => {
         const email = (user.email || '').toLowerCase();
         const meta = user.user_metadata || {};
         const name = (meta.full_name || meta.name || email.split('@')[0] || '회원').trim();
+        const role = ADMIN_EMAILS.includes(email) ? 'admin' : 'member';
         const members = readMembers();
         let member = members.find((item) => item.email.toLowerCase() === email);
         if (!member) {
             member = {
                 id: `CUS-${Date.now().toString().slice(-6)}`,
                 name, phone: '', email, password: '',
-                marketing: false, role: 'member', plan: '미구독', status: 'active',
+                marketing: false, role, plan: '미구독', status: 'active',
                 joinedAt: new Date().toISOString(), provider: 'google'
             };
             members.push(member);
             saveMembers(members);
-        } else if (!member.name && name) {
-            member.name = name;
-            saveMembers(members);
+        } else {
+            let changed = false;
+            if (!member.name && name) { member.name = name; changed = true; }
+            if (member.role !== role && role === 'admin') { member.role = 'admin'; changed = true; }
+            if (changed) saveMembers(members);
         }
         saveSession(member);
         showAuthMessage(`${member.name}님, Google 계정으로 로그인되었습니다.`, true);
