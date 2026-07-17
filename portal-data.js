@@ -136,7 +136,8 @@
                 for (const file of list) {
                     if (file.size > 50 * 1024 * 1024) { toast(`${file.name}: 50MB 초과 — 큰 파일은 드라이브 링크로 공유하세요.`); continue; }
                     toast(`${file.name} 업로드 중…`);
-                    const safe = file.name.replace(/[^\w.\-가-힣 ]+/g, '_');
+                    // 저장소 키는 ASCII만 허용 — 한글 파일명은 키에서만 치환(표시용 이름은 원본 유지)
+                    const safe = file.name.replace(/[^A-Za-z0-9._-]+/g, '_').replace(/_+/g, '_').replace(/^_+|_+$/g, '') || `file.${extOf(file.name).toLowerCase()}`;
                     const path = `res/${Date.now()}_${safe}`;
                     const { error: ue } = await sb.storage.from('portal-files').upload(path, file);
                     if (ue) { toast(`${file.name} 업로드 실패: ${ue.message}`); continue; }
