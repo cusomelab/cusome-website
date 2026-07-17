@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#090c16">
+    <title>관리자 콘솔 — CUSOME Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"><link rel="stylesheet" href="portal.css">
+    <script src="theme.js"></script>
+</head>
+<body class="admin-body">
+    <div class="admin-shell">
+        <aside class="admin-sidebar" id="adminSidebar">
+            <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10.4 7.8a2 2 0 0 1 3.1-1.7l11 7.9a2 2 0 0 1 0 3.3l-11 8a2 2 0 0 1-3.1-1.7V7.8Z" fill="currentColor"/><path d="M5.2 10.2a2 2 0 0 1 3.1-1.7l8.5 6.1a1.7 1.7 0 0 1 0 2.8l-8.5 6.1a2 2 0 0 1-3.1-1.7V10.2Z" fill="currentColor" opacity=".55"/></svg></span><span>CUSOME</span><span class="brand-label">ADMIN</span></a>
+            <nav class="admin-nav" aria-label="관리자 메뉴">
+                <span class="admin-nav-label">OVERVIEW</span>
+                <button class="active" type="button" data-view="dashboard"><span>⌂</span>대시보드</button>
+                <button type="button" data-view="members"><span>♙</span>회원 관리</button>
+                <button type="button" data-view="subscriptions"><span>₩</span>구독·결제 관리</button>
+                <span class="admin-nav-label">LEARNING CONTENT</span>
+                <button type="button" data-view="courses"><span>▤</span>강의·커리큘럼</button>
+                <button type="button" data-view="videos"><span>▶</span>영상 업로드·처리</button>
+                <button type="button" data-view="resources"><span>↓</span>학습 자료실</button>
+                <span class="admin-nav-label">PRODUCT & SUPPORT</span>
+                <button type="button" data-view="agents"><span>✦</span>에이전트 관리</button>
+                <button type="button" data-view="support"><span>?</span>고객 지원</button>
+                <button type="button" data-view="settings"><span>⚙</span>서비스 설정</button>
+            </nav>
+            <div class="admin-user"><span class="admin-avatar">한</span><div><b>한유창 관리자</b><small>admin@cusome.demo</small></div><button class="logout-btn" id="logoutButton" type="button" aria-label="로그아웃">↪</button></div>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-topbar">
+                <button class="admin-mobile-toggle" id="adminMobileToggle" type="button" aria-label="관리자 메뉴 열기">☰</button>
+                <div class="admin-title"><small>CUSOME CONTROL CENTER</small><b id="currentViewTitle">운영 대시보드</b></div>
+                <div class="admin-top-actions"><button class="admin-icon-button" type="button" data-theme-toggle aria-label="밝은 모드로 전환"><span data-theme-icon>☼</span></button><span class="admin-date" id="adminDate"></span><button class="admin-icon-button" type="button" aria-label="알림">♢<i></i></button><a class="admin-icon-button" href="index.html" aria-label="사이트 보기">↗</a></div>
+            </header>
+
+            <div class="admin-content">
+                <section class="admin-view active" id="view-dashboard" data-title="운영 대시보드">
+                    <div class="view-head"><div><h1>안녕하세요, 한유창 대표님.</h1><p>쿠썸 에이전트의 오늘 운영 현황입니다.</p></div><div class="view-actions"><button class="admin-button" type="button" data-toast="운영 리포트를 준비했습니다.">리포트 내보내기</button><button class="admin-button primary" type="button" data-open-view="agents">에이전트 관리</button></div></div>
+                    <div class="stat-grid">
+                        <article class="admin-stat"><small>전체 회원</small><strong id="memberCount">128</strong><em>↑ 이번 달 12명</em><span class="stat-art"></span></article>
+                        <article class="admin-stat"><small>활성 구독</small><strong>84</strong><em>65.6% 전환</em><span class="stat-art"></span></article>
+                        <article class="admin-stat"><small>이번 달 매출</small><strong>₩3.48M</strong><em>↑ 전월 대비 18%</em><span class="stat-art"></span></article>
+                        <article class="admin-stat"><small>영상 처리 중</small><strong id="processingCount">3</strong><em style="color:#efb05c">업로드·인코딩</em><span class="stat-art"></span></article>
+                    </div>
+                    <div class="admin-grid">
+                        <article class="admin-panel"><div class="panel-head"><h2>최근 7개월 구독 추이</h2><button type="button">상세 보기 →</button></div><div class="chart-wrap" aria-label="월별 구독 추이 막대그래프"><div class="chart-bar" style="--h:32%"><span>1월</span></div><div class="chart-bar" style="--h:43%"><span>2월</span></div><div class="chart-bar" style="--h:39%"><span>3월</span></div><div class="chart-bar" style="--h:58%"><span>4월</span></div><div class="chart-bar" style="--h:66%"><span>5월</span></div><div class="chart-bar" style="--h:72%"><span>6월</span></div><div class="chart-bar" style="--h:87%"><span>7월</span></div></div></article>
+                        <article class="admin-panel"><div class="panel-head"><h2>최근 활동</h2><button type="button">전체 보기</button></div><div class="activity-list"><div class="activity-item"><span>＋</span><div><b>신규 회원 가입</b><small>김크리에이터 · 번들 관심</small></div><time>12분 전</time></div><div class="activity-item"><span>₩</span><div><b>롱폼 구독 결제</b><small>이셀러 · 19,900원</small></div><time>34분 전</time></div><div class="activity-item"><span>!</span><div><b>지원 요청 접수</b><small>Flow 이미지 생성 문의</small></div><time>1시간 전</time></div><div class="activity-item"><span>↻</span><div><b>에이전트 업데이트</b><small>CUSOME FLOW V2.6</small></div><time>오늘</time></div></div></article>
+                    </div>
+                </section>
+
+                <section class="admin-view" id="view-members" data-title="회원 관리">
+                    <div class="view-head"><div><h1>회원 관리</h1><p>가입 회원과 구독 상태를 검색하고 관리합니다.</p></div><div class="view-actions"><button class="admin-button" type="button" data-toast="회원 목록 CSV 내보내기를 준비했습니다.">CSV 내보내기</button><button class="admin-button primary" type="button" data-toast="회원 초대 링크를 생성했습니다.">회원 초대</button></div></div>
+                    <div class="table-tools"><input class="admin-search" id="memberSearch" type="search" placeholder="이름 또는 이메일 검색"><select class="filter-select" id="memberStatus"><option value="all">전체 상태</option><option value="active">활성</option><option value="waiting">대기</option><option value="paused">중지</option></select></div>
+                    <div class="data-panel"><table class="data-table"><thead><tr><th>회원</th><th>가입일</th><th>구독 상품</th><th>상태</th><th>최근 접속</th><th></th></tr></thead><tbody id="memberTableBody"></tbody></table></div>
+                </section>
+
+                <section class="admin-view" id="view-subscriptions" data-title="구독·결제 관리">
+                    <div class="view-head"><div><h1>구독·결제 관리</h1><p>에이전트 상품별 신청과 결제 상태를 확인합니다.</p></div><div class="view-actions"><button class="admin-button primary" type="button" data-toast="결제 내역을 최신 상태로 동기화했습니다.">결제 동기화</button></div></div>
+                    <div class="stat-grid"><article class="admin-stat"><small>번들 구독</small><strong>42</strong><em>₩2.09M / 월</em><span class="stat-art"></span></article><article class="admin-stat"><small>숏폼 구독</small><strong>27</strong><em>₩1.07M / 월</em><span class="stat-art"></span></article><article class="admin-stat"><small>롱폼 구독</small><strong>15</strong><em>₩298K / 월</em><span class="stat-art"></span></article><article class="admin-stat"><small>결제 대기</small><strong>6</strong><em style="color:#efb05c">확인 필요</em><span class="stat-art"></span></article></div>
+                    <div class="data-panel" style="margin-top:13px"><table class="data-table"><thead><tr><th>주문 번호</th><th>회원</th><th>상품</th><th>금액</th><th>결제일</th><th>상태</th></tr></thead><tbody><tr><td>ORD-260717-018</td><td>김크리에이터</td><td>콘텐츠 에이전트 번들</td><td>49,900원</td><td>2026.07.17</td><td><span class="status-badge">결제완료</span></td></tr><tr><td>ORD-260717-017</td><td>이셀러</td><td>롱폼 에이전트</td><td>19,900원</td><td>2026.07.17</td><td><span class="status-badge">결제완료</span></td></tr><tr><td>ORD-260716-016</td><td>박스튜디오</td><td>숏폼 에이전트</td><td>39,900원</td><td>2026.07.16</td><td><span class="status-badge waiting">입금대기</span></td></tr></tbody></table></div>
+                </section>
+
+                <section class="admin-view" id="view-courses" data-title="강의·커리큘럼">
+                    <div class="view-head">
+                        <div><h1>강의·커리큘럼</h1><p>수강생에게 공개되는 강의, 차시, 영상과 첨부 자료를 한곳에서 편성합니다.</p></div>
+                        <div class="view-actions"><a class="admin-button" href="classroom.html?preview=1" target="_blank">수강생 화면 보기 ↗</a><button class="admin-button primary" id="newCourseButton" type="button">새 강의 만들기</button></div>
+                    </div>
+                    <div class="course-summary-grid">
+                        <article><span>운영 강의</span><strong>3</strong><small>공개 2 · 준비 1</small></article>
+                        <article><span>전체 차시</span><strong id="lessonTotal">46</strong><small>영상 39 · 문서 7</small></article>
+                        <article><span>수강 배정</span><strong>126</strong><small>이번 달 +18</small></article>
+                        <article><span>평균 진도율</span><strong>68%</strong><small>완강률 41%</small></article>
+                    </div>
+                    <div class="course-toolbar">
+                        <div class="course-tabs" role="tablist" aria-label="강의 상태"><button class="active" type="button" data-course-filter="all">전체 3</button><button type="button" data-course-filter="published">공개 2</button><button type="button" data-course-filter="draft">준비 1</button></div>
+                        <input class="admin-search" id="courseSearch" type="search" placeholder="강의명 검색">
+                    </div>
+                    <div class="course-admin-list" id="courseAdminList">
+                        <article class="course-admin-card" data-course-state="published" data-course-name="롱폼 에이전트 시작 가이드">
+                            <div class="course-cover long"><span>LONG-FORM</span><b>롱폼 에이전트<br>시작 가이드</b><em>12 LESSONS</em></div>
+                            <div class="course-admin-info">
+                                <div class="course-state-row"><span class="status-badge">공개 중</span><span>필수 과정</span></div>
+                                <h2>롱폼 에이전트 시작 가이드</h2><p>설치·Flow 로그인부터 첫 MP4 완성, 예약 제작과 이어하기까지</p>
+                                <div class="course-data-row"><span><b>12</b> 차시</span><span><b>4시간 18분</b> 영상</span><span><b>84명</b> 수강</span><span><b>72%</b> 평균 진도</span></div>
+                                <div class="course-admin-actions"><a class="admin-button" href="lesson.html?course=longform&preview=1" target="_blank">미리보기</a><button class="admin-button course-edit" type="button" data-course-id="longform">커리큘럼 편집</button><button class="switch on" type="button" aria-label="롱폼 강의 공개 상태" aria-pressed="true"></button></div>
+                            </div>
+                        </article>
+                        <article class="course-admin-card" data-course-state="published" data-course-name="숏폼 에이전트 시작 가이드">
+                            <div class="course-cover short"><span>SHORT-FORM</span><b>숏폼 에이전트<br>시작 가이드</b><em>10 LESSONS</em></div>
+                            <div class="course-admin-info">
+                                <div class="course-state-row"><span class="status-badge">공개 중</span><span>필수 과정</span></div>
+                                <h2>숏폼 에이전트 시작 가이드</h2><p>세로형 프로젝트 설정, 대본·장면·자막 구성과 반복 제작 흐름</p>
+                                <div class="course-data-row"><span><b>10</b> 차시</span><span><b>3시간 06분</b> 영상</span><span><b>69명</b> 수강</span><span><b>65%</b> 평균 진도</span></div>
+                                <div class="course-admin-actions"><a class="admin-button" href="lesson.html?course=shortform&preview=1" target="_blank">미리보기</a><button class="admin-button course-edit" type="button" data-course-id="shortform">커리큘럼 편집</button><button class="switch on" type="button" aria-label="숏폼 강의 공개 상태" aria-pressed="true"></button></div>
+                            </div>
+                        </article>
+                        <article class="course-admin-card" data-course-state="draft" data-course-name="콘텐츠 자동화 운영 마스터">
+                            <div class="course-cover master"><span>MASTER CLASS</span><b>콘텐츠 자동화<br>운영 마스터</b><em>24 LESSONS</em></div>
+                            <div class="course-admin-info">
+                                <div class="course-state-row"><span class="status-badge waiting">공개 준비</span><span>심화 과정</span></div>
+                                <h2>콘텐츠 자동화 운영 마스터</h2><p>롱폼·숏폼 채널을 함께 운영하고 콘텐츠 루틴을 설계하는 심화 과정</p>
+                                <div class="course-data-row"><span><b>24</b> 차시</span><span><b>8시간 40분</b> 예정</span><span><b>31명</b> 대기</span><span><b>78%</b> 제작</span></div>
+                                <div class="course-admin-actions"><a class="admin-button" href="lesson.html?course=master&preview=1" target="_blank">미리보기</a><button class="admin-button course-edit" type="button" data-course-id="master">커리큘럼 편집</button><button class="switch" type="button" aria-label="마스터 강의 공개 상태" aria-pressed="false"></button></div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="admin-view" id="view-videos" data-title="영상 업로드·처리">
+                    <div class="view-head"><div><h1>영상 업로드·처리</h1><p>완성 영상 파일을 업로드하고 처리 상태를 확인하거나 YouTube 영상으로 미리 봅니다.</p></div><div class="view-actions"><a class="admin-button" href="https://www.youtube.com/@cusome" target="_blank" rel="noopener">CUSOME 채널 보기 ↗</a></div></div>
+                    <div class="media-tool-grid">
+                        <article class="admin-panel media-upload-panel">
+                            <div class="panel-head"><h2>파일 업로드</h2><span class="status-badge">로컬 처리</span></div>
+                            <div class="video-dropzone" id="videoDropzone" tabindex="0" role="button" aria-label="영상 파일 선택 또는 끌어놓기">
+                                <input id="videoFileInput" type="file" accept="video/mp4,video/webm,video/quicktime" multiple hidden>
+                                <span class="dropzone-icon">↑</span><h3>영상 파일을 끌어 놓으세요</h3><p>또는 클릭해서 MP4, WebM, MOV 파일을 선택하세요.</p><small>브라우저 데모에서는 파일이 외부 서버로 전송되지 않습니다.</small>
+                            </div>
+                            <div class="upload-file-list" id="uploadFileList"><p class="empty-upload">선택된 파일이 없습니다.</p></div>
+                        </article>
+                        <article class="admin-panel youtube-panel">
+                            <div class="panel-head"><h2>YouTube 영상으로 보기</h2><span class="youtube-label">YouTube</span></div>
+                            <label class="form-field" for="youtubeUrl"><span>YouTube URL</span><div class="youtube-input-row"><input class="admin-search" id="youtubeUrl" type="url" placeholder="https://www.youtube.com/watch?v=..."><button class="admin-button primary" id="loadYoutube" type="button">불러오기</button></div></label>
+                            <p class="youtube-error" id="youtubeError" role="alert"></p>
+                            <div class="youtube-preview" id="youtubePreview"><div class="youtube-placeholder"><span>▶</span><b>YouTube 미리보기</b><small>영상 주소를 입력하면 이곳에서 재생할 수 있습니다.</small></div></div>
+                        </article>
+                    </div>
+                    <article class="admin-panel processing-panel">
+                        <div class="panel-head"><h2>처리 대기열</h2><button type="button" id="clearCompleted">완료 항목 정리</button></div>
+                        <div class="processing-list" id="processingList">
+                            <div class="processing-item" data-state="processing"><span class="file-type">MP4</span><div class="processing-info"><b>브랜드스토리_자동제작.mp4</b><small>인코딩 · 82%</small><div class="processing-bar"><i style="width:82%"></i></div></div><span class="status-badge waiting">처리 중</span><button type="button" aria-label="처리 메뉴">•••</button></div>
+                            <div class="processing-item" data-state="waiting"><span class="file-type">MP4</span><div class="processing-info"><b>건강쇼츠_아침습관_03.mp4</b><small>업로드 대기 · 124 MB</small><div class="processing-bar"><i style="width:8%"></i></div></div><span class="status-badge waiting">대기</span><button type="button" aria-label="대기 메뉴">•••</button></div>
+                            <div class="processing-item" data-state="done"><span class="file-type done">MP4</span><div class="processing-info"><b>경제이야기_금리의이해.mp4</b><small>처리 완료 · 16:9 · 1080p</small><div class="processing-bar"><i style="width:100%"></i></div></div><span class="status-badge">완료</span><button class="preview-local" type="button" aria-label="완료 영상 미리보기">보기</button></div>
+                        </div>
+                    </article>
+                    <div class="video-library-head"><div><h2>영상 라이브러리</h2><p>최근 등록한 영상과 공개 상태</p></div><select class="filter-select" aria-label="영상 공개 상태 필터"><option>전체 영상</option><option>공개</option><option>예약</option><option>비공개</option></select></div>
+                    <div class="video-library" id="videoLibrary">
+                        <article class="video-item"><div class="video-thumb purple"><span>16:9</span><button type="button" data-library-preview aria-label="사진관의 겨울 영상 미리보기">▶</button></div><div class="video-meta"><span class="status-badge">공개</span><h3>사진관의 겨울</h3><p>롱폼 · 28:14 · 2026.07.17</p></div></article>
+                        <article class="video-item"><div class="video-thumb cyan"><span>9:16</span><button type="button" data-library-preview aria-label="아침 습관 영상 미리보기">▶</button></div><div class="video-meta"><span class="status-badge waiting">예약</span><h3>하루 10분, 아침 습관</h3><p>숏폼 · 00:48 · 오늘 18:00</p></div></article>
+                        <article class="video-item"><div class="video-thumb pink"><span>16:9</span><button type="button" data-library-preview aria-label="금리의 이해 영상 미리보기">▶</button></div><div class="video-meta"><span class="status-badge paused">비공개</span><h3>처음 배우는 금리의 이해</h3><p>롱폼 · 18:32 · 2026.07.15</p></div></article>
+                    </div>
+                </section>
+
+                <section class="admin-view" id="view-resources" data-title="학습 자료실">
+                    <div class="view-head"><div><h1>학습 자료실</h1><p>수강생이 강의실에서 내려받을 PDF, 템플릿, 설치 파일과 예제 자료를 관리합니다.</p></div><div class="view-actions"><a class="admin-button" href="classroom.html?preview=1#resources" target="_blank">수강생 자료실 보기 ↗</a><button class="admin-button primary" id="resourceUploadButton" type="button">자료 업로드</button></div></div>
+                    <div class="resource-admin-grid">
+                        <article class="admin-panel resource-upload-card">
+                            <div class="panel-head"><h2>새 자료 등록</h2><span class="status-badge">수강생 전용</span></div>
+                            <div class="resource-dropzone" id="resourceDropzone" tabindex="0" role="button" aria-label="학습 자료 파일 선택 또는 끌어놓기">
+                                <input id="resourceFileInput" type="file" accept=".pdf,.zip,.xlsx,.xls,.docx,.pptx,.txt,.json" multiple hidden>
+                                <span>＋</span><h3>자료 파일을 끌어 놓으세요</h3><p>PDF, ZIP, Excel, Word, PPT 파일 · 파일당 최대 500MB</p>
+                            </div>
+                            <div class="resource-form">
+                                <label>연결 강의<select id="resourceCourse"><option>전체 수강생 공통</option><option>롱폼 에이전트 시작 가이드</option><option>숏폼 에이전트 시작 가이드</option><option>콘텐츠 자동화 운영 마스터</option></select></label>
+                                <label>자료 유형<select id="resourceType"><option>사용 가이드</option><option>실전 템플릿</option><option>설치 파일</option><option>예제 프로젝트</option></select></label>
+                                <label class="resource-check"><input id="resourceDownload" type="checkbox" checked> 수강생 다운로드 허용</label>
+                            </div>
+                        </article>
+                        <article class="admin-panel resource-stats-card">
+                            <div class="panel-head"><h2>자료실 현황</h2></div>
+                            <div class="resource-big-stat"><strong id="resourceCount">8</strong><span>등록 자료</span></div>
+                            <div class="resource-mini-stats"><span><b>1.8 GB</b>전체 용량</span><span><b>362회</b>이번 달 다운로드</span><span><b>6개</b>공개 자료</span></div>
+                            <div class="storage-meter"><div><span>저장 공간</span><em>1.8 / 10 GB</em></div><i><b style="width:18%"></b></i></div>
+                        </article>
+                    </div>
+                    <div class="table-tools resource-tools"><input class="admin-search" id="resourceSearch" type="search" placeholder="자료명 검색"><select class="filter-select" id="resourceFilter"><option value="all">전체 유형</option><option value="guide">사용 가이드</option><option value="template">실전 템플릿</option><option value="install">설치 파일</option><option value="example">예제 프로젝트</option></select></div>
+                    <div class="data-panel"><table class="data-table resource-table"><thead><tr><th>자료</th><th>연결 강의</th><th>유형</th><th>크기</th><th>다운로드</th><th>공개</th><th></th></tr></thead><tbody id="resourceTableBody">
+                        <tr data-resource-type="guide"><td><div class="resource-file-cell"><span class="pdf">PDF</span><div><b>롱폼 에이전트 빠른 시작 가이드.pdf</b><small>2026.07.17 업데이트</small></div></div></td><td>롱폼 시작 가이드</td><td>사용 가이드</td><td>12.4 MB</td><td>128회</td><td><span class="status-badge">공개</span></td><td><button class="table-action" type="button" aria-label="롱폼 가이드 자료 메뉴">•••</button></td></tr>
+                        <tr data-resource-type="template"><td><div class="resource-file-cell"><span class="xlsx">XLS</span><div><b>콘텐츠 주제·업로드 일정표.xlsx</b><small>2026.07.16 업데이트</small></div></div></td><td>전체 공통</td><td>실전 템플릿</td><td>1.8 MB</td><td>94회</td><td><span class="status-badge">공개</span></td><td><button class="table-action" type="button" aria-label="일정표 자료 메뉴">•••</button></td></tr>
+                        <tr data-resource-type="example"><td><div class="resource-file-cell"><span class="zip">ZIP</span><div><b>브랜드 스토리 예제 프로젝트.zip</b><small>2026.07.15 업데이트</small></div></div></td><td>롱폼 시작 가이드</td><td>예제 프로젝트</td><td>486 MB</td><td>67회</td><td><span class="status-badge">공개</span></td><td><button class="table-action" type="button" aria-label="예제 프로젝트 자료 메뉴">•••</button></td></tr>
+                        <tr data-resource-type="install"><td><div class="resource-file-cell"><span class="zip">ZIP</span><div><b>CUSOME_FLOW_설치패키지.zip</b><small>V2.6 · Windows</small></div></div></td><td>구독 회원 전용</td><td>설치 파일</td><td>1.3 GB</td><td>73회</td><td><span class="status-badge waiting">제한</span></td><td><button class="table-action" type="button" aria-label="설치 파일 자료 메뉴">•••</button></td></tr>
+                    </tbody></table></div>
+                </section>
+
+                <section class="admin-view" id="view-agents" data-title="에이전트 관리">
+                    <div class="view-head"><div><h1>에이전트 관리</h1><p>상품 공개 상태, 버전과 사용 현황을 관리합니다.</p></div><div class="view-actions"><button class="admin-button primary" type="button" data-toast="새 에이전트 등록 양식을 열었습니다.">새 에이전트 등록</button></div></div>
+                    <div class="agent-admin-grid">
+                        <article class="agent-admin-card"><div class="agent-card-top"><span class="agent-card-icon">🎬</span><div><b>롱폼 에이전트</b><small>CUSOME FLOW · V2.6</small></div><button class="switch on" type="button" aria-label="롱폼 판매 상태" aria-pressed="true"></button></div><div class="agent-metrics"><span>활성 구독<b>57</b></span><span>이번 달 실행<b>1,284</b></span><span>완료율<b>94.8%</b></span></div><div class="agent-progress"><i style="--value:94.8%"></i></div></article>
+                        <article class="agent-admin-card"><div class="agent-card-top"><span class="agent-card-icon" style="color:var(--cyan);background:rgba(49,215,232,.08)">▯</span><div><b>숏폼 에이전트</b><small>SHORTS FLOW · V1.8</small></div><button class="switch on" type="button" aria-label="숏폼 판매 상태" aria-pressed="true"></button></div><div class="agent-metrics"><span>활성 구독<b>69</b></span><span>이번 달 실행<b>2,906</b></span><span>완료율<b>96.2%</b></span></div><div class="agent-progress"><i style="--value:96.2%;background:var(--gradient-cyan)"></i></div></article>
+                        <article class="agent-admin-card"><div class="agent-card-top"><span class="agent-card-icon">🚀</span><div><b>로켓배송 에이전트</b><small>개발 로드맵 · 설계 단계</small></div><button class="switch" type="button" aria-label="로켓배송 공개 상태" aria-pressed="false"></button></div><div class="agent-metrics"><span>진행 단계<b>기획</b></span><span>관심 등록<b>31</b></span><span>진행률<b>18%</b></span></div><div class="agent-progress"><i style="--value:18%"></i></div></article>
+                        <article class="agent-admin-card"><div class="agent-card-top"><span class="agent-card-icon">₩</span><div><b>세무·회계 에이전트</b><small>향후 출시 · 리서치 단계</small></div><button class="switch" type="button" aria-label="세무회계 공개 상태" aria-pressed="false"></button></div><div class="agent-metrics"><span>진행 단계<b>조사</b></span><span>관심 등록<b>24</b></span><span>진행률<b>8%</b></span></div><div class="agent-progress"><i style="--value:8%"></i></div></article>
+                    </div>
+                </section>
+
+                <section class="admin-view" id="view-support" data-title="고객 지원">
+                    <div class="view-head"><div><h1>고객 지원</h1><p>설치, 실행 및 구독 관련 문의를 확인합니다.</p></div><div class="view-actions"><button class="admin-button primary" type="button" data-toast="새 문의 등록 화면을 준비했습니다.">문의 등록</button></div></div>
+                    <div class="admin-panel"><div class="panel-head"><h2>처리 대기 티켓 7건</h2><button type="button">처리 완료 숨기기</button></div><div class="support-ticket"><span class="ticket-priority"></span><div><b>Flow 이미지 생성이 모두 오류로 표시됩니다.</b><small>#CS-1182 · 김크리에이터 · 롱폼 에이전트</small></div><time>12분 전</time></div><div class="support-ticket"><span class="ticket-priority medium"></span><div><b>Vrew 단계에서 작업이 멈췄습니다.</b><small>#CS-1181 · 이셀러 · 롱폼 에이전트</small></div><time>45분 전</time></div><div class="support-ticket"><span class="ticket-priority low"></span><div><b>숏폼 자막 스타일 변경 방법 문의</b><small>#CS-1180 · 박스튜디오 · 숏폼 에이전트</small></div><time>1시간 전</time></div><div class="support-ticket"><span class="ticket-priority medium"></span><div><b>새 PC에 설치 파일을 다시 받고 싶습니다.</b><small>#CS-1179 · 최콘텐츠 · 번들</small></div><time>3시간 전</time></div></div>
+                </section>
+
+                <section class="admin-view" id="view-settings" data-title="서비스 설정">
+                    <div class="view-head"><div><h1>서비스 설정</h1><p>사이트 공지와 운영 정보를 관리합니다.</p></div><div class="view-actions"><button class="admin-button primary" type="button" data-toast="설정 변경사항을 저장했습니다.">변경사항 저장</button></div></div>
+                    <div class="admin-grid"><article class="admin-panel"><div class="panel-head"><h2>회사 정보</h2></div><div class="auth-form"><div class="form-field"><label>회사명</label><div class="input-wrap"><input value="주식회사 폰이지"></div></div><div class="form-row"><div class="form-field"><label>대표자</label><div class="input-wrap"><input value="한유창"></div></div><div class="form-field"><label>사업자등록번호</label><div class="input-wrap"><input value="207-97-00596"></div></div></div><div class="form-field"><label>주소</label><div class="input-wrap"><input value="서울시 영등포구 영등포로109, 722호"></div></div><div class="form-field"><label>고객지원 이메일</label><div class="input-wrap"><input value="phoneeasy@naver.com"></div></div></div></article><article class="admin-panel"><div class="panel-head"><h2>사이트 상태</h2></div><div class="activity-list"><div class="activity-item"><span>●</span><div><b>웹사이트 공개</b><small>모든 방문자에게 표시</small></div><button class="switch on" type="button" aria-label="웹사이트 공개 상태" aria-pressed="true"></button></div><div class="activity-item"><span>↗</span><div><b>YouTube 업로드 예고</b><small>COMING SOON 배지 표시</small></div><button class="switch on" type="button" aria-label="YouTube 업로드 예고 표시" aria-pressed="true"></button></div><div class="activity-item"><span>✉</span><div><b>신규 가입 알림</b><small>관리자 이메일 수신</small></div><button class="switch on" type="button" aria-label="신규 가입 알림 수신" aria-pressed="true"></button></div></div></article></div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div class="course-editor-modal" id="courseEditorModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="courseEditorTitle">
+        <div class="course-editor-backdrop" data-close-course></div>
+        <div class="course-editor-shell">
+            <header class="course-editor-head"><div><small>COURSE BUILDER</small><h2 id="courseEditorTitle">강의 커리큘럼 편집</h2></div><div><button class="admin-button" type="button" data-close-course>취소</button><button class="admin-button primary" id="saveCourseButton" type="button">저장하고 공개</button></div></header>
+            <div class="course-editor-body">
+                <aside class="course-editor-settings">
+                    <label>강의명<input id="editorCourseName" type="text" value="롱폼 에이전트 시작 가이드"></label>
+                    <label>강의 설명<textarea id="editorCourseDescription" rows="4">설치부터 첫 영상 완성까지 단계별로 따라 하는 과정입니다.</textarea></label>
+                    <div class="editor-form-row"><label>공개 상태<select><option>공개</option><option>비공개</option><option>예약 공개</option></select></label><label>수강 권한<select><option>해당 상품 구독자</option><option>전체 회원</option><option>관리자 지정</option></select></label></div>
+                    <label>강의 대표 이미지<div class="editor-cover-upload"><span>＋</span><p>이미지 업로드<br><small>1280×720 권장</small></p></div></label>
+                    <div class="editor-option"><span><b>순차 수강</b><small>이전 차시 완료 후 다음 차시 열기</small></span><button class="switch on" type="button" aria-label="순차 수강 설정" aria-pressed="true"></button></div>
+                    <div class="editor-option"><span><b>진도율 표시</b><small>수강생 화면에 학습 진도 표시</small></span><button class="switch on" type="button" aria-label="진도율 표시 설정" aria-pressed="true"></button></div>
+                    <div class="editor-option"><span><b>자료 다운로드</b><small>차시별 첨부 자료 다운로드 허용</small></span><button class="switch on" type="button" aria-label="자료 다운로드 설정" aria-pressed="true"></button></div>
+                </aside>
+                <section class="curriculum-builder">
+                    <div class="curriculum-head"><div><h3>커리큘럼 구성</h3><p>챕터 안에 영상, YouTube 링크, 문서 차시를 배치합니다.</p></div><button class="admin-button" id="addChapterButton" type="button">＋ 챕터 추가</button></div>
+                    <div class="curriculum-list" id="curriculumList">
+                        <article class="curriculum-chapter">
+                            <header><span class="drag-handle">⋮⋮</span><div><small>CHAPTER 01</small><b>시작 전 준비</b></div><em>3개 차시 · 34분</em><button type="button" aria-label="시작 전 준비 챕터 메뉴">•••</button></header>
+                            <div class="curriculum-lessons">
+                                <div class="curriculum-lesson"><span class="drag-handle">⋮⋮</span><i class="lesson-type video">▶</i><div><b>쿠썸 에이전트와 CUSOME FLOW 소개</b><small>직접 업로드 영상 · 08:24</small></div><span class="lesson-resource">PDF 1</span><button type="button" aria-label="소개 차시 편집">편집</button></div>
+                                <div class="curriculum-lesson"><span class="drag-handle">⋮⋮</span><i class="lesson-type youtube">YT</i><div><b>설치 파일 다운로드와 실행</b><small>YouTube 영상 · 12:10</small></div><span class="lesson-resource">ZIP 1</span><button type="button" aria-label="설치 차시 편집">편집</button></div>
+                                <div class="curriculum-lesson"><span class="drag-handle">⋮⋮</span><i class="lesson-type document">PDF</i><div><b>Flow 로그인과 API 키 준비</b><small>문서 학습 · 약 14분</small></div><span class="lesson-resource">PDF 2</span><button type="button" aria-label="로그인 차시 편집">편집</button></div>
+                            </div>
+                            <button class="add-lesson-button" type="button">＋ 이 챕터에 차시 추가</button>
+                        </article>
+                        <article class="curriculum-chapter">
+                            <header><span class="drag-handle">⋮⋮</span><div><small>CHAPTER 02</small><b>첫 롱폼 자동 제작</b></div><em>5개 차시 · 1시간 42분</em><button type="button" aria-label="첫 제작 챕터 메뉴">•••</button></header>
+                            <div class="curriculum-lessons">
+                                <div class="curriculum-lesson"><span class="drag-handle">⋮⋮</span><i class="lesson-type video">▶</i><div><b>대본과 YouTube URL 입력하기</b><small>직접 업로드 영상 · 18:32</small></div><span class="lesson-resource">TXT 1</span><button type="button" aria-label="대본 입력 차시 편집">편집</button></div>
+                                <div class="curriculum-lesson"><span class="drag-handle">⋮⋮</span><i class="lesson-type video">▶</i><div><b>장르·스타일·주인공 설정</b><small>직접 업로드 영상 · 21:05</small></div><span class="lesson-resource">IMG 3</span><button type="button" aria-label="스타일 설정 차시 편집">편집</button></div>
+                                <div class="curriculum-lesson"><span class="drag-handle">⋮⋮</span><i class="lesson-type video">▶</i><div><b>자동 제작 실행과 진행 로그 읽기</b><small>직접 업로드 영상 · 26:18</small></div><span class="lesson-resource">-</span><button type="button" aria-label="자동 제작 차시 편집">편집</button></div>
+                            </div>
+                            <button class="add-lesson-button" type="button">＋ 이 챕터에 차시 추가</button>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="lesson-editor-drawer" id="lessonEditorDrawer" aria-hidden="true">
+        <div class="drawer-backdrop" data-close-lesson></div>
+        <aside>
+            <header><div><small>LESSON CONTENT</small><h2>차시 콘텐츠 추가</h2></div><button type="button" data-close-lesson aria-label="차시 편집 닫기">×</button></header>
+            <div class="lesson-source-tabs" role="tablist"><button class="active" type="button" data-lesson-source="upload">영상 업로드</button><button type="button" data-lesson-source="youtube">YouTube</button><button type="button" data-lesson-source="document">문서 학습</button></div>
+            <div class="lesson-source-panel active" data-source-panel="upload"><div class="resource-dropzone compact"><span>↑</span><h3>강의 영상 업로드</h3><p>MP4, WebM, MOV · 1080p 권장</p></div></div>
+            <div class="lesson-source-panel" data-source-panel="youtube"><label>영상 URL<input id="lessonYoutubeUrl" type="url" placeholder="https://www.youtube.com/watch?v=..."></label><button class="admin-button" type="button">URL 확인</button></div>
+            <div class="lesson-source-panel" data-source-panel="document"><div class="resource-dropzone compact"><span>＋</span><h3>PDF 또는 문서 첨부</h3><p>수강생이 화면에서 읽는 문서 차시</p></div></div>
+            <div class="lesson-detail-form"><label>차시 제목<input id="newLessonTitle" type="text" placeholder="차시 제목을 입력하세요"></label><label>차시 설명<textarea rows="4" placeholder="수강생에게 보일 학습 안내"></textarea></label><div class="editor-form-row"><label>무료 미리보기<select><option>사용 안 함</option><option>미리보기 허용</option></select></label><label>공개 상태<select><option>공개</option><option>비공개</option></select></label></div><label>첨부 자료<button class="drawer-attach" type="button">＋ PDF·ZIP·템플릿 연결</button></label></div>
+            <footer><button class="admin-button" type="button" data-close-lesson>취소</button><button class="admin-button primary" id="saveLessonButton" type="button">차시 저장</button></footer>
+        </aside>
+    </div>
+    <div class="media-modal" id="mediaModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="영상 미리보기"><div class="media-modal-backdrop" data-close-media></div><div class="media-modal-card"><button class="media-modal-close" type="button" data-close-media aria-label="영상 미리보기 닫기">×</button><div class="media-modal-player" id="mediaModalPlayer"><div class="youtube-placeholder"><span>▶</span><b>미리보기 준비 중</b><small>실제 업로드 파일 또는 YouTube URL을 선택해 주세요.</small></div></div></div></div>
+    <div class="toast-message" id="adminToast" role="status"></div>
+    <script src="admin.js"></script>
+</body>
+</html>

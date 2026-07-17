@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#090c16">
+    <title>마이페이지 — CUSOME Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"><link rel="stylesheet" href="portal.css">
+    <script src="theme.js"></script>
+</head>
+<body class="admin-body">
+    <div class="admin-shell">
+        <aside class="admin-sidebar" id="memberSidebar">
+            <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M10.4 7.8a2 2 0 0 1 3.1-1.7l11 7.9a2 2 0 0 1 0 3.3l-11 8a2 2 0 0 1-3.1-1.7V7.8Z" fill="currentColor"/><path d="M5.2 10.2a2 2 0 0 1 3.1-1.7l8.5 6.1a1.7 1.7 0 0 1 0 2.8l-8.5 6.1a2 2 0 0 1-3.1-1.7V10.2Z" fill="currentColor" opacity=".55"/></svg></span><span>CUSOME</span><span class="brand-label">MY</span></a>
+            <nav class="admin-nav" aria-label="마이페이지 메뉴">
+                <span class="admin-nav-label">MY CUSOME</span>
+                <button class="active" type="button" data-member-view="overview"><span>⌂</span>내 에이전트</button>
+                <a href="classroom.html?preview=1" style="min-height:43px;display:flex;align-items:center;gap:11px;padding:0 12px;border-radius:10px;color:#7f8aa1;font-size:11px;font-weight:700;text-decoration:none"><span style="width:23px">▶</span>내 강의실</a>
+                <button type="button" data-member-view="downloads"><span>↓</span>설치·업데이트</button>
+                <button type="button" data-member-view="guides"><span>▤</span>사용 가이드</button>
+                <button type="button" data-member-view="billing"><span>₩</span>구독 정보</button>
+                <span class="admin-nav-label">SUPPORT</span>
+                <button type="button" data-member-view="support"><span>?</span>기술 지원</button>
+                <a href="index.html" style="min-height:43px;display:flex;align-items:center;gap:11px;padding:0 12px;color:#7f8aa1;font-size:11px;font-weight:700;text-decoration:none"><span style="width:23px">↗</span>웹사이트로 이동</a>
+            </nav>
+            <div class="admin-user"><span class="admin-avatar" id="memberAvatar">회</span><div><b id="memberName">회원</b><small id="memberEmail">member@cusome.demo</small></div><button class="logout-btn" id="memberLogout" type="button" aria-label="로그아웃">↪</button></div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-topbar"><button class="admin-mobile-toggle" id="memberMobileToggle" type="button" aria-label="메뉴 열기">☰</button><div class="admin-title"><small>MY CUSOME</small><b id="memberViewTitle">내 에이전트</b></div><div class="admin-top-actions"><button class="admin-icon-button" type="button" data-theme-toggle aria-label="밝은 모드로 전환"><span data-theme-icon>☼</span></button><a class="admin-icon-button" href="index.html#agents" aria-label="에이전트 상품 보기">＋</a><a class="admin-icon-button" href="mailto:phoneeasy@naver.com" aria-label="문의하기">?</a></div></header>
+            <div class="admin-content">
+                <section class="admin-view active" id="member-view-overview" data-title="내 에이전트">
+                    <div class="view-head"><div><h1><span id="welcomeName">회원</span>님, 반갑습니다.</h1><p>사용 중인 에이전트와 최신 업데이트를 확인하세요.</p></div><div class="view-actions"><a class="admin-button primary" href="index.html#pricing">에이전트 추가하기</a></div></div>
+                    <div class="upload-banner" style="margin-bottom:16px"><div class="upload-icon"><span>✦</span><i></i></div><div><span class="section-kicker">WELCOME TO CUSOME</span><h3>첫 에이전트를 연결해 보세요.</h3><p>구독 신청이 확인되면 설치 파일과 라이선스가 이 페이지에 표시됩니다.</p></div><a class="button button-small button-primary" href="https://forms.gle/PzYYTLjpVoqjfmH88" target="_blank" rel="noopener">구독 신청 ↗</a></div>
+                    <div class="agent-admin-grid"><article class="agent-admin-card"><div class="agent-card-top"><span class="agent-card-icon">🎬</span><div><b>롱폼 에이전트</b><small>CUSOME FLOW · 최신 V2.6</small></div><span class="status-badge waiting">미연결</span></div><div class="agent-metrics"><span>라이선스<b>-</b></span><span>업데이트<b>최신</b></span><span>지원<b>가능</b></span></div><div class="product-actions" style="margin-top:18px"><a class="admin-button" href="https://docs.google.com/document/d/1WYnvJC_N8kJrKR7KWBIwYrCgP5JJeilmpx_wFs-zncc/edit?tab=t.0" target="_blank" rel="noopener">사용 가이드 ↗</a></div></article><article class="agent-admin-card"><div class="agent-card-top"><span class="agent-card-icon" style="color:var(--cyan);background:rgba(49,215,232,.08)">▯</span><div><b>숏폼 에이전트</b><small>SHORTS FLOW · 최신 V1.8</small></div><span class="status-badge waiting">미연결</span></div><div class="agent-metrics"><span>라이선스<b>-</b></span><span>업데이트<b>최신</b></span><span>지원<b>가능</b></span></div><div class="product-actions" style="margin-top:18px"><a class="admin-button" href="https://docs.google.com/document/d/1V_t-EY0LBOtwU_mBGOQgx70XvQ3apvATL4MDHr52pyc/edit?tab=t.0" target="_blank" rel="noopener">사용 가이드 ↗</a></div></article></div>
+                </section>
+                <section class="admin-view" id="member-view-downloads" data-title="설치·업데이트"><div class="view-head"><div><h1>설치·업데이트</h1><p>구독이 활성화된 에이전트의 설치 파일을 받을 수 있습니다.</p></div></div><div class="admin-panel"><div class="panel-head"><h2>설치 가능한 제품</h2></div><div class="support-ticket"><span class="ticket-priority medium"></span><div><b>아직 활성화된 라이선스가 없습니다.</b><small>결제 완료 후 영업일 기준 안내에 따라 설치 파일이 활성화됩니다.</small></div><a class="admin-button" href="index.html#pricing">상품 보기</a></div></div></section>
+                <section class="admin-view" id="member-view-guides" data-title="사용 가이드"><div class="view-head"><div><h1>사용 가이드</h1><p>설치부터 첫 결과물 완성까지 단계별로 안내합니다.</p></div></div><div class="guide-cards"><a class="guide-card" href="https://docs.google.com/document/d/1WYnvJC_N8kJrKR7KWBIwYrCgP5JJeilmpx_wFs-zncc/edit?tab=t.0" target="_blank" rel="noopener"><span class="doc-icon">L</span><div><small>LONG-FORM MANUAL</small><h3>롱폼 에이전트 사용설명서</h3><p>로그인, 자동 제작, 예약과 이어하기</p></div><i>↗</i></a><a class="guide-card" href="https://docs.google.com/document/d/1V_t-EY0LBOtwU_mBGOQgx70XvQ3apvATL4MDHr52pyc/edit?tab=t.0" target="_blank" rel="noopener"><span class="doc-icon cyan">S</span><div><small>SHORT-FORM MANUAL</small><h3>숏폼 에이전트 사용설명서</h3><p>세로형 영상 제작과 단계별 설정</p></div><i>↗</i></a></div></section>
+                <section class="admin-view" id="member-view-billing" data-title="구독 정보"><div class="view-head"><div><h1>구독 정보</h1><p>이용 중인 상품과 결제 정보를 확인합니다.</p></div></div><div class="admin-panel"><div class="panel-head"><h2>현재 구독</h2></div><div class="support-ticket"><span class="ticket-priority low"></span><div><b>현재 활성 구독이 없습니다.</b><small>필요한 에이전트를 선택하고 신청해 주세요.</small></div><a class="admin-button primary" href="index.html#pricing">구독 시작</a></div></div></section>
+                <section class="admin-view" id="member-view-support" data-title="기술 지원"><div class="view-head"><div><h1>기술 지원</h1><p>문제가 생기면 진행 로그와 함께 문의해 주세요.</p></div></div><div class="admin-grid"><article class="admin-panel"><div class="panel-head"><h2>빠른 문제 해결</h2></div><div class="activity-list"><div class="activity-item"><span>1</span><div><b>프로그램을 완전히 종료 후 재실행</b><small>자동 업데이트와 남은 프로세스를 정리합니다.</small></div></div><div class="activity-item"><span>2</span><div><b>외부 서비스 사용량과 크레딧 확인</b><small>Flow, Vrew, AI API 한도를 확인합니다.</small></div></div><div class="activity-item"><span>3</span><div><b>진행 로그 복사</b><small>로그를 함께 보내면 빠르게 확인할 수 있습니다.</small></div></div></div></article><article class="admin-panel"><div class="panel-head"><h2>도움이 더 필요한가요?</h2></div><p style="color:var(--muted);font-size:12px">증상, 사용 중인 에이전트 버전, 진행 로그를 이메일로 보내주세요.</p><a class="button button-primary full" href="mailto:phoneeasy@naver.com?subject=CUSOME%20기술지원%20문의">지원 문의하기</a></article></div></section>
+            </div>
+        </main>
+    </div>
+    <script src="mypage.js"></script>
+</body>
+</html>

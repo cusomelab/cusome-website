@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CUSOME Agent 회원가입">
+    <meta name="theme-color" content="#080b16">
+    <title>회원가입 — CUSOME Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"><link rel="stylesheet" href="portal.css">
+    <script src="theme.js"></script>
+</head>
+<body class="portal-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="portal-header">
+        <a class="brand" href="index.html" aria-label="CUSOME Agent 홈"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10.4 7.8a2 2 0 0 1 3.1-1.7l11 7.9a2 2 0 0 1 0 3.3l-11 8a2 2 0 0 1-3.1-1.7V7.8Z" fill="currentColor"/><path d="M5.2 10.2a2 2 0 0 1 3.1-1.7l8.5 6.1a1.7 1.7 0 0 1 0 2.8l-8.5 6.1a2 2 0 0 1-3.1-1.7V10.2Z" fill="currentColor" opacity=".55"/></svg></span><span>CUSOME</span><span class="brand-label">AGENT</span></a>
+        <div class="portal-header-links"><button class="theme-toggle" type="button" data-theme-toggle aria-label="밝은 모드로 전환"><span data-theme-icon>☼</span></button><a href="index.html#pricing">구독 상품 보기</a><a class="button button-small button-ghost" href="login.html">로그인</a></div>
+    </header>
+    <main class="auth-layout">
+        <section class="auth-story reveal visible">
+            <span class="eyebrow"><span class="status-dot"></span> CREATE YOUR ACCOUNT</span>
+            <h1>내 일을 맡길<br><span class="gradient-text">첫 에이전트를 만나세요.</span></h1>
+            <p>회원가입 후 제품 소식, 사용 가이드와 구독 중인 에이전트 정보를 확인할 수 있습니다.</p>
+            <div class="auth-benefits">
+                <div class="auth-benefit"><span>✓</span>새 에이전트 출시 소식</div>
+                <div class="auth-benefit"><span>✓</span>구독 및 설치 정보 통합 관리</div>
+                <div class="auth-benefit"><span>✓</span>문제 해결과 업데이트 지원</div>
+            </div>
+        </section>
+        <section>
+            <div class="auth-card">
+                <div class="auth-card-head"><small>JOIN CUSOME</small><h2>회원가입</h2><p>에이전트 관리를 위한 기본 정보를 입력해 주세요.</p></div>
+                <form class="auth-form" id="signupForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-field"><label for="signupName">이름 <em>*</em></label><div class="input-wrap"><input id="signupName" name="name" type="text" autocomplete="name" placeholder="홍길동" required></div></div>
+                        <div class="form-field"><label for="signupPhone">휴대폰 번호 <em>*</em></label><div class="input-wrap"><input id="signupPhone" name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000" required></div></div>
+                    </div>
+                    <div class="form-field"><label for="signupEmail">이메일 <em>*</em></label><div class="input-wrap"><input id="signupEmail" name="email" type="email" autocomplete="email" placeholder="name@example.com" required><span class="field-icon">@</span></div></div>
+                    <div class="form-field"><label for="signupPassword">비밀번호 <em>*</em></label><div class="input-wrap"><input id="signupPassword" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="영문·숫자 포함 8자 이상" required><button class="password-toggle" type="button" aria-label="비밀번호 보기" data-password-toggle="signupPassword">◉</button></div><div class="password-strength" id="passwordStrength" data-score="0"><span></span><span></span><span></span><span></span></div></div>
+                    <div class="form-field"><label for="signupPasswordConfirm">비밀번호 확인 <em>*</em></label><div class="input-wrap"><input id="signupPasswordConfirm" name="passwordConfirm" type="password" autocomplete="new-password" placeholder="비밀번호를 다시 입력하세요" required></div></div>
+                    <div class="terms-box">
+                        <label class="check-label"><input id="agreeAll" type="checkbox"> <b>전체 약관에 동의합니다.</b></label>
+                        <label class="check-label"><input class="required-term" name="terms" type="checkbox" required> [필수] 이용약관 및 개인정보 수집에 동의합니다.</label>
+                        <label class="check-label"><input name="marketing" type="checkbox"> [선택] 신규 에이전트·혜택 안내 수신에 동의합니다.</label>
+                    </div>
+                    <p class="form-error" id="signupError" role="alert"></p>
+                    <button class="button button-primary full" type="submit">회원가입 완료 <span>→</span></button>
+                </form>
+                <p class="auth-switch">이미 계정이 있나요? <a href="login.html">로그인</a></p>
+            </div>
+            <p class="demo-notice">입력 정보는 이 브라우저의 데모 저장소에만 보관됩니다. 실제 운영 시 보안 서버로 교체해야 합니다.</p>
+        </section>
+    </main>
+    <script src="auth.js"></script>
+</body>
+</html>
