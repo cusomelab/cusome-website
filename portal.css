@@ -81,3 +81,19 @@ body.lesson-body{height:100vh;overflow:hidden;background:#080b14}.lesson-shell{h
 @media(max-width:1100px){.course-admin-list,.student-course-grid{grid-template-columns:repeat(2,1fr)}.course-editor-body{grid-template-columns:280px 1fr}.classroom-hero{grid-template-columns:1fr}.classroom-lower-grid{grid-template-columns:1fr}.lesson-shell{grid-template-columns:285px 1fr}}
 @media(max-width:760px){.course-summary-grid{grid-template-columns:1fr 1fr}.course-admin-list,.resource-admin-grid,.student-course-grid,.classroom-resource-grid{grid-template-columns:1fr}.course-toolbar{align-items:stretch;flex-direction:column}.course-toolbar .admin-search{max-width:none}.course-editor-shell{width:100%;height:100vh;margin:0;border:0;border-radius:0}.course-editor-head{height:auto;align-items:flex-start;flex-direction:column;padding:15px}.course-editor-body{height:calc(100% - 109px);grid-template-columns:1fr}.course-editor-settings{display:none}.curriculum-builder{padding:15px}.curriculum-lesson{grid-template-columns:auto auto 1fr auto}.curriculum-lesson>.lesson-resource{display:none}.classroom-header{height:64px;padding:0 14px}.classroom-nav{display:none}.classroom-main{width:calc(100% - 28px);padding:24px 0 60px}.classroom-hero{padding:25px 21px}.classroom-section{margin-top:30px}.lesson-shell{display:block;height:100vh}.lesson-header{height:62px}.lesson-header-title{max-width:45vw}.lesson-header-title b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lesson-sidebar{width:min(330px,86vw);position:fixed;inset:62px auto 0 0;z-index:50;transform:translateX(-100%);transition:.25s;box-shadow:25px 0 60px rgba(0,0,0,.3)}.lesson-sidebar.open{transform:none}.lesson-content{height:calc(100vh - 62px)}.lesson-stage{padding:15px 14px 50px}.lesson-player{border-radius:12px}.lesson-info h1{font-size:19px}.lesson-detail-grid{grid-template-columns:1fr}.lesson-mobile-menu{display:grid!important}.lesson-toolbar{flex-wrap:wrap}.lesson-toolbar .complete-button{margin-left:0}}
 @media(max-width:420px){.course-summary-grid{grid-template-columns:1fr}.resource-form,.editor-form-row{grid-template-columns:1fr}.resource-check{grid-column:auto}.curriculum-chapter>header{grid-template-columns:auto 1fr auto}.curriculum-chapter header em{display:none}.classroom-hero h1{font-size:29px}.classroom-actions .student-name{display:none}.lesson-toolbar .admin-button{flex:1}}
+
+/* ── Google 로그인 버튼 ───────────────────────────── */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+    color: #1f2937;
+    border: 1px solid rgba(15, 23, 42, 0.16);
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+.google-btn svg { width: 18px; height: 18px; flex: none; }
+.google-btn:hover { background: #f4f6ff; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12); }
+.google-btn:disabled { opacity: 0.6; cursor: wait; }

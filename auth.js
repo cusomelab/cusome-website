@@ -1,6 +1,8 @@
 (() => {
     const MEMBER_KEY = 'cusome_demo_members';
     const SESSION_KEY = 'cusome_demo_session';
+    const SB_URL = 'https://mnsrdblidhporvmlmyzl.supabase.co';
+    const SB_KEY = 'sb_publishable_BwchydZ_ZycoV7sgfkfDQA_hBJ_e6_W'; // publishable(공개) 키
     const requestedNext = new URLSearchParams(window.location.search).get('next') || '';
     const safeNext = /^(?:mypage|classroom|lesson)\.html(?:[?#].*)?$/.test(requestedNext) ? requestedNext : '';
 
@@ -141,4 +143,65 @@
             error.textContent = '회원가입이 완료되었습니다. 가입한 계정으로 로그인해 주세요.';
         }
     }
+
+    // ── Google 로그인 (Supabase Auth) ──────────────────────────────
+    const sb = window.supabase ? window.supabase.createClient(SB_URL, SB_KEY) : null;
+    const statusEl = document.getElementById('loginError') || document.getElementById('signupError');
+    const showAuthMessage = (message, ok) => {
+        if (!statusEl) return;
+        statusEl.className = ok ? 'form-success' : 'form-error';
+        statusEl.textContent = message;
+    };
+
+    const finishGoogleLogin = (user) => {
+        const email = (user.email || '').toLowerCase();
+        const meta = user.user_metadata || {};
+        const name = (meta.full_name || meta.name || email.split('@')[0] || '회원').trim();
+        const members = readMembers();
+        let member = members.find((item) => item.email.toLowerCase() === email);
+        if (!member) {
+            member = {
+                id: `CUS-${Date.now().toString().slice(-6)}`,
+                name, phone: '', email, password: '',
+                marketing: false, role: 'member', plan: '미구독', status: 'active',
+                joinedAt: new Date().toISOString(), provider: 'google'
+            };
+            members.push(member);
+            saveMembers(members);
+        } else if (!member.name && name) {
+            member.name = name;
+            saveMembers(members);
+        }
+        saveSession(member);
+        showAuthMessage(`${member.name}님, Google 계정으로 로그인되었습니다.`, true);
+        window.setTimeout(() => {
+            window.location.href = member.role === 'admin' ? 'admin.html' : (safeNext || 'mypage.html');
+        }, 400);
+    };
+
+    // OAuth 콜백 오류 표시 (사용자가 동의 취소한 경우 등)
+    const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+    if (hashParams.get('error_description')) {
+        showAuthMessage(decodeURIComponent(hashParams.get('error_description')), false);
+    }
+
+    // 구글 리다이렉트 복귀 시 세션 자동 처리
+    if (sb) {
+        sb.auth.getSession().then(({ data }) => {
+            if (data && data.session && data.session.user) finishGoogleLogin(data.session.user);
+        }).catch(() => {});
+    }
+
+    document.querySelectorAll('[data-google-login]').forEach((button) => {
+        button.addEventListener('click', async () => {
+            if (!sb) { showAuthMessage('Google 로그인 모듈을 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.', false); return; }
+            button.disabled = true;
+            const redirectTo = `${window.location.origin}/login.html${safeNext ? `?next=${encodeURIComponent(safeNext)}` : ''}`;
+            const { error } = await sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo } });
+            if (error) {
+                showAuthMessage(`Google 로그인에 실패했습니다: ${error.message}`, false);
+                button.disabled = false;
+            }
+        });
+    });
 })();

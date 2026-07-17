@@ -26,6 +26,8 @@
     document.getElementById('memberMobileToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
     document.getElementById('memberLogout').addEventListener('click', () => {
         localStorage.removeItem(SESSION_KEY);
+        // Supabase(구글 로그인) 세션 토큰도 함께 제거 — 없으면 login.html에서 자동 재로그인됨
+        Object.keys(localStorage).filter((key) => key.startsWith('sb-')).forEach((key) => localStorage.removeItem(key));
         window.location.href = 'login.html';
     });
 })();
