@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠썸 에이전트 · 쿠썸 셀러학교 | AI 영상 제작 프로그램 & 셀러 교육</title>
+    <meta name="description" content="쿠썸 에이전트는 주제만 정하면 AI가 대본 작성부터 영상 완성, 내 유튜브 채널 업로드까지 해주는 PC 프로그램입니다. 쿠팡 셀러를 위한 VOD 강의·실전 템플릿도 함께 제공합니다.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect x="4" y="4" width="40" height="40" rx="12" stroke="url(#grad)" stroke-width="3" stroke-dasharray="6 4"/>
+                    <path d="M20 16L32 24L20 32V16Z" fill="url(#grad)"/>
+                    <defs><linearGradient id="grad" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#6366F1"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs>
+                </svg>
+            </div>
+            <span class="loader-text">CUSOME</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-mark">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                        <path d="M13 10L22 16L13 22V10Z" fill="white"/>
+                        <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#6366F1"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs>
+                    </svg>
+                </div>
+                <span class="logo-text">CUSOME<span class="logo-sub">셀러학교</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#vod" class="nav-link">VOD 강의</a></li>
+                <li><a href="#downloads" class="nav-link">다운로드</a></li>
+                <li><a href="#agent" class="nav-link">에이전트</a></li>
+                <li><a href="#pricing" class="nav-link">요금제</a></li>
+                <li><a href="#instructor" class="nav-link">강사소개</a></li>
+                <li><a href="#reviews" class="nav-link">수강후기</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="다크모드 전환">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="#pricing" class="nav-cta">시작하기</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-grid-pattern"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+            <div class="hero-glow hero-glow-3"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    VOD + 프로그램 다운로드 플랫폼
+                </div>
+                <h1>쿠팡 셀러를 위한<br><span class="gradient-text">올인원 콘텐츠</span><br>플랫폼</h1>
+                <p class="hero-desc">🤖 <strong>쿠썸 에이전트</strong> — 주제만 정하면 AI가 대본 작성부터 영상 완성,<br>내 유튜브 채널 업로드까지 해주는 <strong>AI 영상 제작 PC 프로그램</strong>입니다.<br>연매출 15억 전문가의 <strong>VOD 강의</strong>와 실전 템플릿도 함께 제공해요. <a href="agent.html" style="font-weight:700;">에이전트 자세히 보기 →</a></p>
+                <div class="hero-actions">
+                    <a href="#vod" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        VOD 강의 보기
+                    </a>
+                    <a href="#downloads" class="btn btn-glass btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        프로그램 다운로드
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1200">0</span><span class="stat-unit">+</span>
+                        <span class="stat-label">누적 수강생</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="150">0</span><span class="stat-unit">+</span>
+                        <span class="stat-label">VOD 강의</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="35">0</span><span class="stat-unit">개</span>
+                        <span class="stat-label">다운로드 프로그램</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-player-card">
+                    <div class="player-preview">
+                        <div class="player-thumb">
+                            <div class="player-play-btn">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                            <div class="player-duration">12:34</div>
+                        </div>
+                        <div class="player-info">
+                            <span class="player-tag">NEW</span>
+                            <h4>쿠팡 아이템위너 전략 2025</h4>
+                            <p>조회수 2,847회</p>
+                        </div>
+                    </div>
+                    <div class="player-list">
+                        <div class="player-list-item">
+                            <div class="list-thumb"></div>
+                            <div class="list-info">
+                                <span>AI 상품 리서치 자동화</span>
+                                <span class="list-meta">15:22 | 1,293회</span>
+                            </div>
+                        </div>
+                        <div class="player-list-item">
+                            <div class="list-thumb"></div>
+                            <div class="list-info">
+                                <span>위탁판매 소싱처 TOP 10</span>
+                                <span class="list-meta">08:45 | 3,102회</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-download-card">
+                    <div class="dl-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                    </div>
+                    <div class="dl-card-info">
+                        <span class="dl-card-name">마진계산기_v3.2.zip</span>
+                        <div class="dl-progress">
+                            <div class="dl-progress-bar" style="width: 75%"></div>
+                        </div>
+                        <span class="dl-card-meta">2.4MB / 3.2MB</span>
+                    </div>
+                    <div class="dl-card-status">75%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>안전한 다운로드</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>평생 소장</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                    <span>정기 업데이트</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>1,200+ 수강생</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>만족도 4.9/5.0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOD Section -->
+    <section class="section vod-section" id="vod">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    VOD Library
+                </span>
+                <h2><span class="gradient-text">VOD 강의</span> 라이브러리</h2>
+                <p>입문부터 고급까지, 150개 이상의 체계적인 커리큘럼을 무제한으로 시청하세요.</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="vod-filter">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="beginner">입문</button>
+                <button class="filter-btn" data-filter="intermediate">실전</button>
+                <button class="filter-btn" data-filter="advanced">고급</button>
+                <button class="filter-btn" data-filter="ai">AI 자동화</button>
+                <button class="filter-btn" data-filter="marketing">마케팅</button>
+            </div>
+
+            <!-- VOD Grid -->
+            <div class="vod-grid">
+                <!-- VOD Course 1 -->
+                <div class="vod-card" data-category="beginner">
+                    <div class="vod-thumbnail">
+                        <div class="vod-thumb-gradient beginner-grad"></div>
+                        <div class="vod-thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                        <span class="vod-badge beginner">입문</span>
+                        <div class="vod-play-overlay">
+                            <div class="vod-play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                        <div class="vod-duration">6시간 33강</div>
+                    </div>
+                    <div class="vod-info">
+                        <h3>쿠팡의 정석: 기초편</h3>
+                        <p>사업자 등록부터 첫 매출까지, 왕초보를 위한 완벽 가이드</p>
+                        <div class="vod-meta">
+                            <div class="vod-meta-left">
+                                <span class="vod-views">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    4,281회
+                                </span>
+                                <span class="vod-rating">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    4.9
+                                </span>
+                            </div>
+                            <span class="vod-price free">무료 미리보기</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VOD Course 2 -->
+                <div class="vod-card" data-category="intermediate">
+                    <div class="vod-thumbnail">
+                        <div class="vod-thumb-gradient intermediate-grad"></div>
+                        <div class="vod-thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                        </div>
+                        <span class="vod-badge intermediate">실전</span>
+                        <span class="vod-badge-hot">HOT</span>
+                        <div class="vod-play-overlay">
+                            <div class="vod-play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                        <div class="vod-duration">10시간 45강</div>
+                    </div>
+                    <div class="vod-info">
+                        <h3>쿠팡의 정석: 실전편</h3>
+                        <p>아이템위너, 광고 최적화, 로켓배송 입점까지</p>
+                        <div class="vod-meta">
+                            <div class="vod-meta-left">
+                                <span class="vod-views">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    6,103회
+                                </span>
+                                <span class="vod-rating">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    4.9
+                                </span>
+                            </div>
+                            <span class="vod-price">&#8361;349,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VOD Course 3 -->
+                <div class="vod-card" data-category="advanced ai">
+                    <div class="vod-thumbnail">
+                        <div class="vod-thumb-gradient advanced-grad"></div>
+                        <div class="vod-thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"/><circle cx="12" cy="6" r="1" fill="rgba(255,255,255,0.6)"/></svg>
+                        </div>
+                        <span class="vod-badge advanced">프리미엄</span>
+                        <div class="vod-play-overlay">
+                            <div class="vod-play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                        <div class="vod-duration">15시간 60강</div>
+                    </div>
+                    <div class="vod-info">
+                        <h3>AI 셀러 마스터</h3>
+                        <p>ChatGPT, Gemini 활용 상품 리서치부터 자동화까지</p>
+                        <div class="vod-meta">
+                            <div class="vod-meta-left">
+                                <span class="vod-views">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    3,455회
+                                </span>
+                                <span class="vod-rating">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    5.0
+                                </span>
+                            </div>
+                            <span class="vod-price">&#8361;590,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VOD Course 4 -->
+                <div class="vod-card" data-category="marketing">
+                    <div class="vod-thumbnail">
+                        <div class="vod-thumb-gradient marketing-grad"></div>
+                        <div class="vod-thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <span class="vod-badge marketing">마케팅</span>
+                        <div class="vod-play-overlay">
+                            <div class="vod-play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                        <div class="vod-duration">8시간 32강</div>
+                    </div>
+                    <div class="vod-info">
+                        <h3>쿠팡 광고 마스터클래스</h3>
+                        <p>CPC/CPA 광고 최적화, ROI 극대화 전략</p>
+                        <div class="vod-meta">
+                            <div class="vod-meta-left">
+                                <span class="vod-views">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    2,198회
+                                </span>
+                                <span class="vod-rating">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    4.8
+                                </span>
+                            </div>
+                            <span class="vod-price">&#8361;249,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VOD Course 5 -->
+                <div class="vod-card" data-category="beginner">
+                    <div class="vod-thumbnail">
+                        <div class="vod-thumb-gradient beginner-grad"></div>
+                        <div class="vod-thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+                        </div>
+                        <span class="vod-badge beginner">입문</span>
+                        <div class="vod-play-overlay">
+                            <div class="vod-play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                        <div class="vod-duration">4시간 20강</div>
+                    </div>
+                    <div class="vod-info">
+                        <h3>위탁판매 완전정복</h3>
+                        <p>재고 없이 시작하는 쿠팡 위탁판매 A to Z</p>
+                        <div class="vod-meta">
+                            <div class="vod-meta-left">
+                                <span class="vod-views">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    5,012회
+                                </span>
+                                <span class="vod-rating">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    4.9
+                                </span>
+                            </div>
+                            <span class="vod-price">&#8361;149,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VOD Course 6 -->
+                <div class="vod-card" data-category="ai advanced">
+                    <div class="vod-thumbnail">
+                        <div class="vod-thumb-gradient ai-grad"></div>
+                        <div class="vod-thumb-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+                        </div>
+                        <span class="vod-badge ai">AI</span>
+                        <span class="vod-badge-new">NEW</span>
+                        <div class="vod-play-overlay">
+                            <div class="vod-play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                        <div class="vod-duration">12시간 48강</div>
+                    </div>
+                    <div class="vod-info">
+                        <h3>엑셀 VBA 업무 자동화</h3>
+                        <p>주문관리, 재고관리, 매출 리포트 자동 생성</p>
+                        <div class="vod-meta">
+                            <div class="vod-meta-left">
+                                <span class="vod-views">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    1,876회
+                                </span>
+                                <span class="vod-rating">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    4.8
+                                </span>
+                            </div>
+                            <span class="vod-price">&#8361;390,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-more">
+                <a href="#pricing" class="btn btn-outline btn-lg">전체 강의 보기 (150+)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="section download-section" id="downloads">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Downloads
+                </span>
+                <h2><span class="gradient-text">프로그램 & 템플릿</span> 다운로드</h2>
+                <p>쿠팡 판매에 필요한 자동화 프로그램과 실전 템플릿을 다운로드하세요.<br>구매 후 즉시 다운로드, 평생 업데이트 지원.</p>
+            </div>
+
+            <!-- Download Category Tabs -->
+            <div class="dl-tabs">
+                <button class="dl-tab active" data-tab="all">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    전체
+                </button>
+                <button class="dl-tab" data-tab="program">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    프로그램
+                </button>
+                <button class="dl-tab" data-tab="template">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    템플릿
+                </button>
+                <button class="dl-tab" data-tab="guide">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    가이드
+                </button>
+            </div>
+
+            <!-- Download Items Grid -->
+            <div class="dl-grid">
+                <!-- Program 1 -->
+                <div class="dl-item" data-type="program">
+                    <div class="dl-item-header">
+                        <div class="dl-icon program">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                        <div class="dl-badges">
+                            <span class="dl-badge best">BEST</span>
+                            <span class="dl-badge version">v3.2</span>
+                        </div>
+                    </div>
+                    <h3>쿠팡 마진 계산기 Pro</h3>
+                    <p>수수료, 배송비, 원가를 입력하면 자동으로 순이익과 마진율을 계산하는 엑셀 프로그램</p>
+                    <div class="dl-file-info">
+                        <span class="dl-format">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                            XLSM (엑셀)
+                        </span>
+                        <span class="dl-size">3.2 MB</span>
+                        <span class="dl-downloads">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            2,847회
+                        </span>
+                    </div>
+                    <div class="dl-item-footer">
+                        <span class="dl-price free">무료</span>
+                        <button class="btn btn-download" onclick="handleDownload(this, '마진계산기_Pro_v3.2.zip')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            다운로드
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="dl-item" data-type="program">
+                    <div class="dl-item-header">
+                        <div class="dl-icon program">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                        </div>
+                        <div class="dl-badges">
+                            <span class="dl-badge new">NEW</span>
+                            <span class="dl-badge version">v2.0</span>
+                        </div>
+                    </div>
+                    <h3>키워드 분석 자동화 툴</h3>
+                    <p>쿠팡 인기 키워드를 자동 수집하고 검색량, 경쟁강도를 분석하는 프로그램</p>
+                    <div class="dl-file-info">
+                        <span class="dl-format">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                            ZIP (엑셀+매크로)
+                        </span>
+                        <span class="dl-size">8.7 MB</span>
+                        <span class="dl-downloads">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            1,203회
+                        </span>
+                    </div>
+                    <div class="dl-item-footer">
+                        <span class="dl-price">&#8361;49,000</span>
+                        <button class="btn btn-download" onclick="handleDownload(this, '키워드분석툴_v2.0.zip')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            다운로드
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Template 1 -->
+                <div class="dl-item" data-type="template">
+                    <div class="dl-item-header">
+                        <div class="dl-icon template">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <div class="dl-badges">
+                            <span class="dl-badge best">BEST</span>
+                        </div>
+                    </div>
+                    <h3>도매처 리스트 300선</h3>
+                    <p>카테고리별 엄선된 국내외 도매처 300곳 리스트 (연락처, 최소주문량 포함)</p>
+                    <div class="dl-file-info">
+                        <span class="dl-format">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                            XLSX (엑셀)
+                        </span>
+                        <span class="dl-size">1.5 MB</span>
+                        <span class="dl-downloads">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            4,512회
+                        </span>
+                    </div>
+                    <div class="dl-item-footer">
+                        <span class="dl-price">&#8361;29,000</span>
+                        <button class="btn btn-download" onclick="handleDownload(this, '도매처리스트_300선.xlsx')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            다운로드
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="dl-item" data-type="program">
+                    <div class="dl-item-header">
+                        <div class="dl-icon program">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+                        </div>
+                        <div class="dl-badges">
+                            <span class="dl-badge hot">HOT</span>
+                            <span class="dl-badge version">v1.5</span>
+                        </div>
+                    </div>
+                    <h3>AI 상품 리서치 봇</h3>
+                    <p>ChatGPT API 연동, 트렌드 상품을 자동 분석하고 수익성을 예측하는 프로그램</p>
+                    <div class="dl-file-info">
+                        <span class="dl-format">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                            ZIP (Python+엑셀)
+                        </span>
+                        <span class="dl-size">15.3 MB</span>
+                        <span class="dl-downloads">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            987회
+                        </span>
+                    </div>
+                    <div class="dl-item-footer">
+                        <span class="dl-price">&#8361;89,000</span>
+                        <button class="btn btn-download" onclick="handleDownload(this, 'AI_상품리서치봇_v1.5.zip')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            다운로드
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Template 2 -->
+                <div class="dl-item" data-type="template">
+                    <div class="dl-item-header">
+                        <div class="dl-icon template">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <div class="dl-badges">
+                            <span class="dl-badge version">v4.0</span>
+                        </div>
+                    </div>
+                    <h3>매출관리 대시보드</h3>
+                    <p>일별/월별 매출, 광고비, 순이익을 한눈에 파악하는 구글 시트 대시보드</p>
+                    <div class="dl-file-info">
+                        <span class="dl-format">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                            Google Sheets
+                        </span>
+                        <span class="dl-size">공유 링크</span>
+                        <span class="dl-downloads">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            3,291회
+                        </span>
+                    </div>
+                    <div class="dl-item-footer">
+                        <span class="dl-price free">무료</span>
+                        <button class="btn btn-download" onclick="handleDownload(this, '매출관리_대시보드_v4.zip')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            다운로드
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Guide 1 -->
+                <div class="dl-item" data-type="guide">
+                    <div class="dl-item-header">
+                        <div class="dl-icon guide">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </div>
+                        <div class="dl-badges">
+                            <span class="dl-badge new">NEW</span>
+                        </div>
+                    </div>
+                    <h3>쿠팡 셀러 가이드북 2025</h3>
+                    <p>120페이지 분량의 쿠팡 판매 완벽 가이드. 초보 셀러 필독서</p>
+                    <div class="dl-file-info">
+                        <span class="dl-format">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                            PDF
+                        </span>
+                        <span class="dl-size">24.8 MB</span>
+                        <span class="dl-downloads">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            1,654회
+                        </span>
+                    </div>
+                    <div class="dl-item-footer">
+                        <span class="dl-price">&#8361;19,000</span>
+                        <button class="btn btn-download" onclick="handleDownload(this, '쿠팡셀러가이드북_2025.pdf')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            다운로드
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-more">
+                <a href="#pricing" class="btn btn-outline btn-lg">전체 다운로드 보기 (35+)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <!-- CUSOME Agent Section -->
+    <section class="section agent-section" id="agent">
+        <style>
+            .agent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+            .agent-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 30px; box-shadow: var(--shadow-md); transition: var(--transition); }
+            .agent-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+            .agent-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+            .agent-icon { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--gradient); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
+            .agent-card h3 { font-size: 20px; font-weight: 800; color: var(--text); }
+            .agent-card .agent-sub { font-size: 13px; color: var(--text-light); font-weight: 600; }
+            .agent-card > p { color: var(--text-light); font-size: 15px; margin-bottom: 16px; }
+            .agent-feats { list-style: none; padding: 0; margin: 0; }
+            .agent-feats li { display: flex; gap: 8px; align-items: flex-start; font-size: 14.5px; color: var(--text); margin-bottom: 8px; }
+            .agent-feats li::before { content: "✓"; color: var(--success); font-weight: 800; flex-shrink: 0; }
+            .agent-note { margin-top: 36px; background: var(--primary-bg); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: var(--radius-md); padding: 18px 22px; font-size: 14.5px; color: var(--text); }
+            .agent-note a { color: var(--primary); font-weight: 600; }
+        </style>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg>
+                    CUSOME Agent
+                </span>
+                <h2><span class="gradient-text">쿠썸 에이전트</span> — AI 영상 제작 프로그램</h2>
+                <p>주제만 정하면 AI가 대본부터 완성 영상까지 만들어 주는 PC 프로그램입니다.<br>완성된 영상은 버튼 하나로 <strong>내 유튜브 채널</strong>에 바로 올릴 수 있어요.</p>
+            </div>
+
+            <div class="agent-grid">
+                <div class="agent-card">
+                    <div class="agent-card-head">
+                        <div class="agent-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+                        </div>
+                        <div>
+                            <h3>쿠썸 숏폼 에이전트</h3>
+                            <span class="agent-sub">세로 숏폼 · 쇼핑 쇼츠 특화</span>
+                        </div>
+                    </div>
+                    <p>상품 소개·정보성 숏폼 영상을 AI가 자동으로 제작합니다.</p>
+                    <ul class="agent-feats">
+                        <li>AI 대본 생성 (검증된 떡상 패턴 적용)</li>
+                        <li>자동 컷편집 · 자막 · 목소리 더빙</li>
+                        <li>캡컷 초안 또는 완성 MP4로 바로 출력</li>
+                        <li>썸네일 · 장면별 AI 이미지/영상 생성</li>
+                        <li>완성 영상을 내 유튜브 채널에 바로 업로드 (예약 공개 지원)</li>
+                    </ul>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-card-head">
+                        <div class="agent-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg>
+                        </div>
+                        <div>
+                            <h3>쿠썸 롱폼 에이전트</h3>
+                            <span class="agent-sub">가로 16:9 롱폼 · 스토리 특화</span>
+                        </div>
+                    </div>
+                    <p>스토리·정보성 롱폼 영상을 대본부터 완성본까지 자동 제작합니다.</p>
+                    <ul class="agent-feats">
+                        <li>사연 · 지식 등 다양한 장르의 AI 대본</li>
+                        <li>AI 이미지 + 스톡 영상 자동 배치</li>
+                        <li>무료 AI 목소리 더빙 (다양한 음색)</li>
+                        <li>16:9 완성 MP4 출력</li>
+                        <li>완성 영상을 내 유튜브 채널에 바로 업로드 (예약 공개 지원)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="agent-note">
+                🔒 <strong>유튜브 연결 안내</strong> — 유튜브 업로드는 사용자가 본인 구글 계정으로 직접 로그인·허용해야 동작하며, 인증 정보(토큰)는 <strong>사용자 PC에만 저장</strong>됩니다. 회사 서버로 전송되지 않습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인하세요.
+            </div>
+        </div>
+    </section>
+
+    <section class="section pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    Pricing
+                </span>
+                <h2>합리적인 <span class="gradient-text">요금제</span></h2>
+                <p>필요에 맞는 요금제를 선택하세요. 모든 플랜은 7일 환불 보장.</p>
+            </div>
+
+            <div class="pricing-toggle">
+                <span class="toggle-label active" data-period="monthly">월간</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" data-period="yearly">연간 <span class="toggle-discount">-30%</span></span>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>스타터</h3>
+                        <p>쿠팡 판매를 처음 시작하는 분</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount" data-monthly="0" data-yearly="0">무료</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            입문 VOD 3개 무료 시청
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            마진 계산기 무료 다운로드
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            매출 대시보드 템플릿
+                        </li>
+                        <li class="excluded">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            전체 VOD 라이브러리
+                        </li>
+                        <li class="excluded">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            프리미엄 프로그램 다운로드
+                        </li>
+                        <li class="excluded">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            커뮤니티 & 멘토링
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-full">무료로 시작</a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="pricing-card featured">
+                    <div class="pricing-popular">MOST POPULAR</div>
+                    <div class="pricing-header">
+                        <h3>프로</h3>
+                        <p>본격적으로 매출을 올리고 싶은 분</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount" data-monthly="49,000" data-yearly="34,300">
+                            <span class="price-currency">&#8361;</span>49,000<span class="price-period">/월</span>
+                        </span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            전체 VOD 라이브러리 무제한
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            모든 프로그램 다운로드
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            전체 템플릿 & 가이드
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            수강생 전용 카톡방
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            프로그램 업데이트 즉시 제공
+                        </li>
+                        <li class="excluded">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            1:1 멘토링
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-full">프로 시작하기</a>
+                </div>
+
+                <!-- Master Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>마스터</h3>
+                        <p>AI 자동화까지 완벽하게 마스터</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount" data-monthly="99,000" data-yearly="69,300">
+                            <span class="price-currency">&#8361;</span>99,000<span class="price-period">/월</span>
+                        </span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            프로 플랜의 모든 혜택
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            월 2회 1:1 멘토링 (60분)
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            주 1회 라이브 Q&A
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            AI 자동화 프로그램 전체
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            신규 콘텐츠 우선 제공
+                        </li>
+                        <li class="included">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            맞춤형 자동화 구축 지원
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-full">마스터 시작하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="section instructor-section" id="instructor">
+        <div class="container">
+            <div class="instructor-grid">
+                <div class="instructor-image">
+                    <div class="instructor-photo">
+                        <div class="photo-placeholder">
+                            <span>쿠썸</span>
+                        </div>
+                        <div class="photo-ring"></div>
+                    </div>
+                    <div class="instructor-badges">
+                        <span class="i-badge">쿠팡 파워셀러</span>
+                        <span class="i-badge">유튜브 크리에이터</span>
+                        <span class="i-badge">패스트캠퍼스 강사</span>
+                    </div>
+                </div>
+                <div class="instructor-info">
+                    <span class="section-tag">Instructor</span>
+                    <h2>안녕하세요,<br><span class="gradient-text">쿠썸</span>입니다</h2>
+                    <p class="instructor-intro">8년 유통업 경력, 연매출 15억 달성.<br>쿠팡 마켓플레이스에서 6개월 만에 누적 1.5억 매출을 기록했습니다.<br>그 경험을 바탕으로 실전 VOD와 자동화 프로그램을 제작합니다.</p>
+                    <div class="instructor-stats">
+                        <div class="i-stat">
+                            <span class="i-stat-num">15억</span>
+                            <span class="i-stat-label">연매출</span>
+                        </div>
+                        <div class="i-stat">
+                            <span class="i-stat-num">1,200+</span>
+                            <span class="i-stat-label">수강생</span>
+                        </div>
+                        <div class="i-stat">
+                            <span class="i-stat-num">8년</span>
+                            <span class="i-stat-label">유통 경력</span>
+                        </div>
+                        <div class="i-stat">
+                            <span class="i-stat-num">150+</span>
+                            <span class="i-stat-label">VOD 강의</span>
+                        </div>
+                    </div>
+                    <ul class="instructor-history">
+                        <li>패스트캠퍼스 「쿠썸X쿠팡 온라인 기초」 강의</li>
+                        <li>쿠팡 광고센터 공식 특강 「쿠팡 광고 100% 활용법」</li>
+                        <li>도매꾹/도매매 교육센터 「쿠팡 판매 완벽분석」 특강</li>
+                        <li>유튜브 채널 「쿠썸」 운영 (구독자 8,000+)</li>
+                        <li>AI 활용 이커머스 자동화 전문가</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Reviews
+                </span>
+                <h2>수강생 <span class="gradient-text">생생 후기</span></h2>
+                <p>실제 수강생들의 솔직한 이야기를 확인하세요.</p>
+            </div>
+            <div class="reviews-slider">
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-stars">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <span class="review-tag">VOD 수강</span>
+                        </div>
+                        <p class="review-text">"완전 초보였는데 기초편 VOD 듣고 한 달 만에 첫 매출이 나왔어요. 용어 하나하나 설명해주셔서 따라가기 쉬웠습니다. 마진 계산기도 정말 유용해요!"</p>
+                        <div class="review-author">
+                            <div class="review-avatar">김</div>
+                            <div class="review-author-info">
+                                <span class="author-name">김○○</span>
+                                <span class="author-meta">직장인 부업 | 수강 2개월차</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-stars">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <span class="review-tag">프로그램 다운로드</span>
+                        </div>
+                        <p class="review-text">"키워드 분석 툴 다운받아서 쓰고 있는데 진짜 혁명이에요. 전에는 수동으로 3시간 걸리던 게 10분이면 끝나요. 정기 업데이트도 해주셔서 항상 최신 버전으로 씁니다."</p>
+                        <div class="review-author">
+                            <div class="review-avatar">이</div>
+                            <div class="review-author-info">
+                                <span class="author-name">이○○</span>
+                                <span class="author-meta">전업 셀러 | 월 매출 500만원</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-stars">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <span class="review-tag">마스터 플랜</span>
+                        </div>
+                        <p class="review-text">"AI 셀러 마스터 VOD + VBA 자동화 프로그램 다운받아서 매출 관리 시간이 절반으로 줄었습니다. 1:1 멘토링에서 제 상황에 맞는 조언을 받을 수 있어서 가성비 최고예요."</p>
+                        <div class="review-author">
+                            <div class="review-avatar">박</div>
+                            <div class="review-author-info">
+                                <span class="author-name">박○○</span>
+                                <span class="author-meta">1인 셀러 | AI 마스터 수강생</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="review-stars">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <span class="review-tag">VOD + 다운로드</span>
+                        </div>
+                        <p class="review-text">"카톡방에서 궁금한 거 물어보면 바로바로 답변해주세요. 도매처 리스트 다운받고 첫 소싱 성공했습니다. 육아하면서 부업하기에 VOD라서 딱 좋아요!"</p>
+                        <div class="review-author">
+                            <div class="review-avatar">정</div>
+                            <div class="review-author-info">
+                                <span class="author-name">정○○</span>
+                                <span class="author-meta">육아맘 | 부업 시작 3개월차</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews-nav">
+                    <button class="review-nav-btn prev" id="reviewPrev" aria-label="이전">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <div class="reviews-dots" id="reviewsDots"></div>
+                    <button class="review-nav-btn next" id="reviewNext" aria-label="다음">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    FAQ
+                </span>
+                <h2>자주 묻는 <span class="gradient-text">질문</span></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>VOD 강의는 얼마나 시청할 수 있나요?</span>
+                        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>구독 기간 동안 무제한으로 시청할 수 있습니다. 프로/마스터 플랜은 전체 VOD 라이브러리에 접근 가능하며, 스타터(무료) 플랜은 입문 강의 3개를 무료로 시청할 수 있습니다. 모든 강의는 모바일, 태블릿, PC에서 시청 가능합니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>다운로드한 프로그램은 평생 사용 가능한가요?</span>
+                        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>네, 한 번 다운로드한 프로그램과 템플릿은 평생 사용 가능합니다. 구독 기간 중 업데이트도 무료로 제공됩니다. 구독이 종료되더라도 이미 다운로드한 파일은 계속 사용할 수 있습니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>환불 규정은 어떻게 되나요?</span>
+                        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>결제일로부터 7일 이내, VOD 시청률 10% 미만인 경우 전액 환불이 가능합니다. 다운로드한 파일이 있는 경우에도 7일 이내라면 환불 가능합니다. 환불 요청은 고객센터 또는 카카오톡으로 문의해 주세요.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>프로그램 파일이 안 열리거나 오류가 나면 어떻게 하나요?</span>
+                        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>각 프로그램에는 상세한 설치 가이드가 포함되어 있습니다. 그래도 문제가 생기면 카카오톡 실시간 상담으로 문의하시면 원격으로 도움을 드립니다. 엑셀 VBA 프로그램의 경우 매크로 활성화 방법도 안내해 드립니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>쿠팡 판매 경험이 전혀 없어도 괜찮은가요?</span>
+                        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>물론입니다! 기초편 VOD는 사업자 등록부터 시작하는 완전 입문 과정입니다. 용어 설명, 화면 따라하기 등 초보자 눈높이에 맞춰 제작되었습니다. 무료 스타터 플랜으로 먼저 체험해보시는 걸 추천드립니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>플랜 업그레이드/다운그레이드가 가능한가요?</span>
+                        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>네, 언제든 변경 가능합니다. 업그레이드 시 남은 기간에 대해 차액만 결제하면 되고, 다운그레이드는 다음 결제일부터 적용됩니다. 카카오톡 또는 고객센터로 요청해 주세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-bg-elements">
+                    <div class="cta-circle cta-circle-1"></div>
+                    <div class="cta-circle cta-circle-2"></div>
+                </div>
+                <h2>지금 시작하세요</h2>
+                <p>150개 이상의 VOD 강의와 35개 이상의 자동화 프로그램.<br>쿠팡 판매의 모든 것을 쿠썸 셀러학교에서 경험하세요.</p>
+                <div class="cta-actions">
+                    <a href="#pricing" class="btn btn-white btn-lg">요금제 보기</a>
+                    <a href="#contact" class="btn btn-outline-white btn-lg">무료 상담 받기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Contact
+                </span>
+                <h2>문의 & <span class="gradient-text">상담 신청</span></h2>
+                <p>궁금한 점이 있으시면 편하게 문의해 주세요.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form-wrap">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">이름</label>
+                                <input type="text" id="name" name="name" placeholder="홍길동" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">연락처</label>
+                                <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry">문의 유형</label>
+                            <select id="inquiry" name="inquiry">
+                                <option value="">선택해주세요</option>
+                                <option value="vod">VOD 강의 문의</option>
+                                <option value="download">프로그램 다운로드 문의</option>
+                                <option value="pricing">요금제 문의</option>
+                                <option value="refund">환불 문의</option>
+                                <option value="tech">기술 지원 (프로그램 오류)</option>
+                                <option value="mentoring">1:1 멘토링 문의</option>
+                                <option value="etc">기타 문의</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">문의 내용</label>
+                            <textarea id="message" name="message" rows="5" placeholder="궁금하신 내용을 자유롭게 작성해 주세요."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">문의하기</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <h4>전화 문의</h4>
+                        <p>010-3924-0084</p>
+                        <span class="info-sub">평일 10:00 ~ 18:00</span>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <h4>이메일</h4>
+                        <p>phoneeasy@naver.com</p>
+                        <span class="info-sub">24시간 접수 가능</span>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h4>카카오톡</h4>
+                        <p>쿠썸 셀러학교</p>
+                        <span class="info-sub">실시간 상담</span>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        </div>
+                        <h4>유튜브</h4>
+                        <p>쿠썸</p>
+                        <span class="info-sub">무료 콘텐츠 시청</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-mark">
+                            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                                <rect width="32" height="32" rx="8" fill="url(#footerLogoGrad)"/>
+                                <path d="M13 10L22 16L13 22V10Z" fill="white"/>
+                                <defs><linearGradient id="footerLogoGrad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#6366F1"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">CUSOME<span class="logo-sub">셀러학교</span></span>
+                    </a>
+                    <p>쿠팡 셀러를 위한 올인원 콘텐츠 플랫폼.<br>VOD 강의부터 자동화 프로그램까지.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>콘텐츠</h4>
+                    <ul>
+                        <li><a href="#vod">VOD 강의</a></li>
+                        <li><a href="#downloads">프로그램 다운로드</a></li>
+                        <li><a href="#agent">쿠썸 에이전트</a></li>
+                        <li><a href="#downloads">템플릿 & 가이드</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="#pricing">요금제</a></li>
+                        <li><a href="#contact">1:1 멘토링</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>회사</h4>
+                    <ul>
+                        <li><a href="#instructor">강사 소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="privacy.html">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>주식회사 폰이지 | 대표: 한유창 | 사업자등록번호: 207-97-00596 | 주소: 서울시 영등포구 영등포로109, 722호 | 이메일: phoneeasy@naver.com</p>
+                <p>&copy; 2025 쿠썸 셀러학교. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="맨 위로">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-player">
+                <div class="modal-player-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <p>강의 영상이 여기에 재생됩니다</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="toast-content">
+            <span class="toast-title">다운로드 시작</span>
+            <span class="toast-message">파일이 다운로드됩니다.</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
