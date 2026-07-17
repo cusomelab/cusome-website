@@ -211,3 +211,41 @@ body.lesson-body{height:100vh;overflow:hidden;background:#080b14}.lesson-shell{h
 .lk-legend{display:flex;align-items:center;gap:6px;font-size:11px;flex-wrap:wrap}
 .lk-legend i{display:inline-block;width:10px;height:10px;border-radius:2px}
 .lk-line{width:100%;height:200px;display:block}
+
+/* ── 가독성 확대 2차 (2026-07-18) — 수강생 페이지 글씨 더 키우고 대비·여백 개선 ── */
+.classroom-nav a{font-size:14px;padding:8px 12px}
+.classroom-hero p{font-size:15px}
+.classroom-hero small{font-size:12px}
+.continue-card p{font-size:13px}
+.classroom-section-head p{font-size:13px}
+.student-course-body h3{font-size:16px}
+.student-course-body p{font-size:13px;line-height:1.6}
+.student-course-meta{font-size:12px}
+.notice-row b{font-size:14px}
+.notice-row small{font-size:12px}
+.quick-resource b{font-size:13px}
+.quick-resource small{font-size:12px}
+.classroom-resource{padding:14px 16px}
+.classroom-resource b{font-size:14px}
+.classroom-resource small{font-size:12px}
+.lesson-back{font-size:13px}
+.lesson-header-title b{font-size:14px}
+.lesson-header-title small{font-size:11px}
+.lesson-progress-card small,.lesson-progress-card span{font-size:12px}
+.lesson-chapter header b{font-size:14px}
+.lesson-chapter header small{font-size:11px}
+.lesson-link{padding:10px 12px;gap:10px}
+.lesson-link b{font-size:14px;line-height:1.45}
+.lesson-link small{font-size:11px}
+.lesson-link em{font-size:11px}
+.lesson-info p{font-size:15px;line-height:1.7}
+.lesson-box h2,.lesson-box h3{font-size:15px}
+.lesson-box p,.lesson-box li{font-size:14px;line-height:1.7}
+.lesson-notes{font-size:14px}
+.lesson-download{opacity:1}
+.lesson-download b{font-size:14px;color:inherit}
+.lesson-download small{font-size:12px;opacity:.75}
+.lesson-download span{font-size:11px}
+.lesson-placeholder small{font-size:12px}
+.demo-notice{font-size:12px}
+.auth-switch{font-size:14px}
