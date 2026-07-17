@@ -12,21 +12,30 @@
     <div class="admin-shell">
         <aside class="admin-sidebar" id="adminSidebar">
             <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10.4 7.8a2 2 0 0 1 3.1-1.7l11 7.9a2 2 0 0 1 0 3.3l-11 8a2 2 0 0 1-3.1-1.7V7.8Z" fill="currentColor"/><path d="M5.2 10.2a2 2 0 0 1 3.1-1.7l8.5 6.1a1.7 1.7 0 0 1 0 2.8l-8.5 6.1a2 2 0 0 1-3.1-1.7V10.2Z" fill="currentColor" opacity=".55"/></svg></span><span>CUSOME</span><span class="brand-label">ADMIN</span></a>
+            <a class="admin-sitelink" href="index.html" target="_blank" rel="noopener"><span>↗</span>사이트 바로 가기</a>
             <nav class="admin-nav" aria-label="관리자 메뉴">
-                <span class="admin-nav-label">OVERVIEW</span>
-                <button class="active" type="button" data-view="dashboard"><span>⌂</span>대시보드</button>
-                <button type="button" data-view="members"><span>♙</span>회원 관리</button>
-                <button type="button" data-view="subscriptions"><span>₩</span>구독·결제 관리</button>
-                <span class="admin-nav-label">LEARNING CONTENT</span>
-                <button type="button" data-view="courses"><span>▤</span>강의·커리큘럼</button>
+                <button class="active" type="button" data-view="dashboard"><span>📊</span>대시보드</button>
+                <button type="button" data-toast="사이트 디자인 편집은 준비 중이에요."><span>🎨</span>사이트 디자인</button>
+                <span class="admin-nav-label">회원 관리</span>
+                <button type="button" data-view="members"><span>👥</span>가입 회원</button>
+                <button type="button" data-toast="회원 그룹 관리는 준비 중이에요."><span>🗂️</span>회원 그룹 관리</button>
+                <span class="admin-nav-label">상품 관리</span>
+                <button type="button" data-view="courses"><span>▦</span>강의</button>
                 <button type="button" data-view="videos"><span>▶</span>영상 업로드·처리</button>
-                <button type="button" data-view="resources"><span>↓</span>학습 자료실</button>
-                <span class="admin-nav-label">PRODUCT & SUPPORT</span>
+                <button type="button" data-view="resources"><span>⬇</span>디지털 상품·자료</button>
+                <button type="button" data-toast="라이브·패키지 상품은 준비 중이에요."><span>📦</span>라이브 · 패키지</button>
+                <span class="admin-nav-label">운영</span>
+                <button type="button" data-toast="게시판 관리는 준비 중이에요."><span>📋</span>게시판 관리</button>
+                <button type="button" data-toast="리뷰 관리는 준비 중이에요."><span>💬</span>리뷰 관리</button>
+                <button type="button" data-toast="쿠폰 관리는 준비 중이에요."><span>🎟️</span>쿠폰 관리</button>
+                <button type="button" data-view="subscriptions"><span>₩</span>매출 및 정산 관리</button>
+                <span class="admin-nav-label">설정</span>
                 <button type="button" data-view="agents"><span>✦</span>에이전트 관리</button>
-                <button type="button" data-view="support"><span>?</span>고객 지원</button>
-                <button type="button" data-view="settings"><span>⚙</span>서비스 설정</button>
+                <button type="button" data-view="support"><span>❓</span>고객 지원</button>
+                <button type="button" data-view="settings"><span>⚙</span>운영자 설정</button>
+                <button type="button" data-toast="마케팅·SEO 관리는 준비 중이에요."><span>📣</span>마케팅 · SEO</button>
             </nav>
-            <div class="admin-user"><span class="admin-avatar">한</span><div><b>한유창 관리자</b><small>admin@cusome.demo</small></div><button class="logout-btn" id="logoutButton" type="button" aria-label="로그아웃">↪</button></div>
+            <div class="admin-user"><span class="admin-avatar" id="adminUserAvatar">쿠</span><div><b id="adminUserName">쿠썸 운영자</b><small id="adminUserEmail">운영자 계정</small></div><button class="logout-btn" id="logoutButton" type="button" aria-label="로그아웃">↪</button></div>
         </aside>
 
         <main class="admin-main">
@@ -37,17 +46,55 @@
             </header>
 
             <div class="admin-content">
-                <section class="admin-view active" id="view-dashboard" data-title="운영 대시보드">
-                    <div class="view-head"><div><h1>안녕하세요, 한유창 대표님.</h1><p>쿠썸 에이전트의 오늘 운영 현황입니다.</p></div><div class="view-actions"><button class="admin-button" type="button" data-toast="운영 리포트를 준비했습니다.">리포트 내보내기</button><button class="admin-button primary" type="button" data-open-view="agents">에이전트 관리</button></div></div>
-                    <div class="stat-grid">
-                        <article class="admin-stat"><small>전체 회원</small><strong id="memberCount">128</strong><em>↑ 이번 달 12명</em><span class="stat-art"></span></article>
-                        <article class="admin-stat"><small>활성 구독</small><strong>84</strong><em>65.6% 전환</em><span class="stat-art"></span></article>
-                        <article class="admin-stat"><small>이번 달 매출</small><strong>₩3.48M</strong><em>↑ 전월 대비 18%</em><span class="stat-art"></span></article>
-                        <article class="admin-stat"><small>영상 처리 중</small><strong id="processingCount">3</strong><em style="color:#efb05c">업로드·인코딩</em><span class="stat-art"></span></article>
+                <section class="admin-view active" id="view-dashboard" data-title="대시보드">
+                    <div class="lk-onboard admin-panel">
+                        <div class="lk-onboard-head"><b>🚀 쿠썸 에이전트 시작하기</b><span class="muted-inline">ⓘ 세팅 방법이 어려우신가요?</span><a class="admin-button primary" href="https://docs.google.com/document/d/1WYnvJC_N8kJrKR7KWBIwYrCgP5JJeilmpx_wFs-zncc/edit" target="_blank" rel="noopener">퀵! 가이드 보러가기</a></div>
+                        <div class="lk-onboard-grid">
+                            <div class="lk-card">
+                                <div class="lk-card-head"><h2>상품(강의) 설정하기</h2><span>2/5 완료</span></div>
+                                <div class="lk-bar"><i style="width:40%"></i></div>
+                                <ul class="lk-checklist">
+                                    <li class="done"><button type="button" data-open-view="videos">유튜브에 강의 영상 올리기 (미등록 공개) →</button></li>
+                                    <li class="done"><button type="button" data-open-view="videos">영상 업로드·처리에서 강의로 등록하기 →</button></li>
+                                    <li><button type="button" data-open-view="courses">차시 번호 맞춰 커리큘럼 구성하기 →</button></li>
+                                    <li><button type="button" data-open-view="resources">학습 자료 올리기 (파일당 50MB) →</button></li>
+                                    <li><button type="button" data-toast="수강생 화면은 classroom.html에서 확인하세요.">수강생 강의실에서 확인하기 →</button></li>
+                                </ul>
+                            </div>
+                            <div class="lk-card">
+                                <div class="lk-card-head"><h2>사이트 설정하기</h2><span>3/5 완료</span></div>
+                                <div class="lk-bar"><i style="width:60%"></i></div>
+                                <ul class="lk-checklist">
+                                    <li class="done"><button type="button" data-toast="메인 페이지는 index.html — 배포는 GitHub 푸시로.">메인 페이지 편집하기 →</button></li>
+                                    <li class="done"><button type="button" data-toast="구글 로그인이 연결되어 있어요 (Supabase Auth).">구글 로그인 연결하기 →</button></li>
+                                    <li class="done"><button type="button" data-toast="privacy.html · terms.html 게시 완료.">약관·개인정보 페이지 만들기 →</button></li>
+                                    <li><button type="button" data-view-noop data-toast="관리자 이메일은 auth.js의 ADMIN_EMAILS에서 관리해요.">관리자 계정 확인하기 →</button></li>
+                                    <li><button type="button" data-toast="정산 정보 등록은 준비 중이에요.">정산 정보 등록하기 →</button></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                    <div class="lk-section-title">📈 내 사이트 현황 통계</div>
+                    <div class="lk-period admin-panel">
+                        <span class="lk-period-label">조회기간 ⓘ</span>
+                        <button type="button">오늘</button><button type="button">어제</button><button type="button">지난 달</button><button type="button" class="on">최근 7일</button><button type="button">최근 30일</button><button type="button">최근 90일</button>
+                        <input type="date" id="lkFrom"> <span>~</span> <input type="date" id="lkTo">
+                        <button type="button" class="admin-button primary" data-toast="상세 통계는 서버 연결 후 제공돼요.">조회</button>
+                    </div>
+                    <div class="lk-sum-label">기간별 합계 ⓘ</div>
+                    <div class="stat-grid lk-sums">
+                        <article class="admin-stat"><small>거래액 (KRW) ⓘ</small><strong>0</strong></article>
+                        <article class="admin-stat"><small>가입자 (명) ⓘ</small><strong id="memberCount">0</strong></article>
+                        <article class="admin-stat"><small>수강 신청 수 (건) ⓘ</small><strong>0</strong></article>
+                        <article class="admin-stat"><small>순 방문자 수 (명) ⓘ</small><strong>1</strong></article>
+                        <article class="admin-stat"><small>신규 방문자 수 (명) ⓘ</small><strong>1</strong></article>
+                        <article class="admin-stat"><small>페이지 뷰 (PV) ⓘ</small><strong>12</strong></article>
+                    </div>
+                    <span id="processingCount" hidden>0</span>
+                    <div class="lk-section-title">통계</div>
                     <div class="admin-grid">
-                        <article class="admin-panel"><div class="panel-head"><h2>최근 7개월 구독 추이</h2><button type="button">상세 보기 →</button></div><div class="chart-wrap" aria-label="월별 구독 추이 막대그래프"><div class="chart-bar" style="--h:32%"><span>1월</span></div><div class="chart-bar" style="--h:43%"><span>2월</span></div><div class="chart-bar" style="--h:39%"><span>3월</span></div><div class="chart-bar" style="--h:58%"><span>4월</span></div><div class="chart-bar" style="--h:66%"><span>5월</span></div><div class="chart-bar" style="--h:72%"><span>6월</span></div><div class="chart-bar" style="--h:87%"><span>7월</span></div></div></article>
-                        <article class="admin-panel"><div class="panel-head"><h2>최근 활동</h2><button type="button">전체 보기</button></div><div class="activity-list"><div class="activity-item"><span>＋</span><div><b>신규 회원 가입</b><small>김크리에이터 · 번들 관심</small></div><time>12분 전</time></div><div class="activity-item"><span>₩</span><div><b>롱폼 구독 결제</b><small>이셀러 · 19,900원</small></div><time>34분 전</time></div><div class="activity-item"><span>!</span><div><b>지원 요청 접수</b><small>Flow 이미지 생성 문의</small></div><time>1시간 전</time></div><div class="activity-item"><span>↻</span><div><b>에이전트 업데이트</b><small>CUSOME FLOW V2.6</small></div><time>오늘</time></div></div></article>
+                        <article class="admin-panel"><div class="panel-head"><h2>기간별 거래액</h2><span class="lk-legend"><i style="background:#4285f4"></i>결제금액 <i style="background:#ea4335"></i>취소금액</span></div><div class="chart-wrap" aria-label="기간별 거래액 막대그래프"><div class="chart-bar" style="--h:2%"><span>07-12</span></div><div class="chart-bar" style="--h:2%"><span>07-13</span></div><div class="chart-bar" style="--h:2%"><span>07-14</span></div><div class="chart-bar" style="--h:2%"><span>07-15</span></div><div class="chart-bar" style="--h:2%"><span>07-16</span></div><div class="chart-bar" style="--h:2%"><span>07-17</span></div><div class="chart-bar" style="--h:2%"><span>07-18</span></div></div></article>
+                        <article class="admin-panel"><div class="panel-head"><h2>기간별 분석</h2><span class="lk-legend"><i style="background:#ea4335"></i>가입자 <i style="background:#fbbc05"></i>수강신청 <i style="background:#34a853"></i>순 방문자 <i style="background:#4285f4"></i>신규 방문자 <i style="background:#a142f4"></i>페이지 뷰</span></div><svg class="lk-line" viewBox="0 0 560 200" preserveAspectRatio="none" aria-label="기간별 분석 라인차트"><line x1="0" y1="180" x2="560" y2="180" stroke="#e5e7eb"/><line x1="0" y1="120" x2="560" y2="120" stroke="#f1f2f4"/><line x1="0" y1="60" x2="560" y2="60" stroke="#f1f2f4"/><polyline points="0,180 93,180 186,180 280,180 373,180 466,178 560,175" fill="none" stroke="#34a853" stroke-width="2"/><polyline points="0,180 93,180 186,180 280,180 373,180 466,176 560,168" fill="none" stroke="#4285f4" stroke-width="2"/><polyline points="0,180 93,180 186,180 280,180 373,180 466,150 560,20" fill="none" stroke="#a142f4" stroke-width="2"/></svg></article>
                     </div>
                 </section>
 
@@ -253,5 +300,26 @@
     <script src="admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="portal-data.js"></script>
+    <script>
+    (() => {
+        try {
+            const s = JSON.parse(localStorage.getItem('cusome_demo_session')) || {};
+            if (s.name) { document.getElementById('adminUserName').textContent = s.name + ' 운영자'; document.getElementById('adminUserAvatar').textContent = s.name.slice(0, 1); }
+            if (s.email) document.getElementById('adminUserEmail').textContent = s.email;
+            const members = JSON.parse(localStorage.getItem('cusome_demo_members')) || [];
+            const mc = document.getElementById('memberCount');
+            if (mc) mc.textContent = String(members.length);
+        } catch (e) { /* 무시 */ }
+        document.querySelectorAll('.lk-period > button:not(.admin-button)').forEach((b) => b.addEventListener('click', () => {
+            document.querySelectorAll('.lk-period > button:not(.admin-button)').forEach((x) => x.classList.remove('on'));
+            b.classList.add('on');
+        }));
+        const to = new Date(), from = new Date(Date.now() - 6 * 864e5);
+        const fmt = (d) => d.toISOString().slice(0, 10);
+        const fi = document.getElementById('lkFrom'), ti = document.getElementById('lkTo');
+        if (fi) fi.value = fmt(from);
+        if (ti) ti.value = fmt(to);
+    })();
+    </script>
 </body>
 </html>
